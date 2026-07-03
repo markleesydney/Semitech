@@ -69,6 +69,7 @@
     .stat .sv.green { color: var(--accent3); }
     .stat .sv.blue { color: var(--accent); }
     .stat .sv.purple { color: #7c3aed; }
+    .stat .sv.amber { color: var(--accent4); }
     .stat .sl { font-size: 11px; color: var(--muted); margin-top: 2px; }
     .container { max-width: 900px; margin: 0 auto; padding: 16px 16px 40px; }
     .section { margin-bottom: 24px; }
@@ -201,28 +202,28 @@
 <!-- 关键数据统计栏 -->
 <div class="stats">
   <div class="stat">
-    <div class="sv blue">$165B</div>
-    <div class="sl">台积电亚利桑那累计投资</div>
+    <div class="sv red">-11%</div>
+    <div class="sl">费城半导体指数两日累跌</div>
   </div>
   <div class="stat">
-    <div class="sv red">+15~25%</div>
-    <div class="sl">模拟/功率芯片7月涨幅</div>
+    <div class="sv red">Meta Compute</div>
+    <div class="sl">Meta卖算力击穿AI稀缺叙事</div>
   </div>
   <div class="stat">
-    <div class="sv red">+15~35%</div>
-    <div class="sl">AI服务器用MLCC涨幅</div>
+    <div class="sv blue">20+</div>
+    <div class="sl">全球芯片企业7月1日同步涨价</div>
+  </div>
+  <div class="stat">
+    <div class="sv red">+700%</div>
+    <div class="sl">DRAM价格自2022年来涨幅</div>
   </div>
   <div class="stat">
     <div class="sv purple">70%+</div>
-    <div class="sl">三星HBM4E良率</div>
+    <div class="sl">三星HBM4E量产良率突破</div>
   </div>
   <div class="stat">
-    <div class="sv red">-10%</div>
-    <div class="sl">费城半导体指数6/5单日跌幅</div>
-  </div>
-  <div class="stat">
-    <div class="sv green">332层</div>
-    <div class="sl">铠侠BiCS10闪存堆叠层数</div>
+    <div class="sv amber">2029年</div>
+    <div class="sl">三星1.4nm推迟至2029量产</div>
   </div>
 </div>
 
@@ -234,112 +235,83 @@
 
   <div class="news-item">
     <div class="ni-top">
-      <span class="ni-emoji">🤖</span>
-      <span class="ni-title">Anthropic启动自研AI芯片，拟采用三星2nm制程</span>
+      <span class="ni-emoji">💥</span>
+      <span class="ni-title">Meta宣布出售过剩AI算力，全球芯片股集体暴跌</span>
     </div>
-    <div class="ni-body">Anthropic已启动自研AI芯片的早期开发工作，并与三星电子就潜在制造合作进行洽谈。计划采用三星2nm制程工艺及先进封装技术，成为继OpenAI（Jalapeño）、Google、Amazon、Microsoft、Meta之后又一家自研芯片的AI巨头。</div>
+    <div class="ni-body">7月1日，Meta宣布成立<strong>Meta Compute</strong>业务，将对外租赁其数据中心闲置AI算力。此举瞬间击穿了市场长期以来"AI算力永远供不应求"的投资逻辑。Meta股价当日<strong>+9%</strong>突破$600，但芯片板块血流成河：费城半导体指数<strong>7月1日跌超6%</strong>，<strong>7月2日再跌5.44%</strong>，两日累跌<strong>11%</strong>。美光暴跌超10%，闪迪跌超14%，CoreWeave和Nebius等AI云厂商分别跌14%和17%。</div>
     <div class="ni-tags">
       <span class="tag tag-us">美国</span>
       <span class="tag tag-ai">AI</span>
-      <span class="tag tag-supply">供应链</span>
+      <span class="tag tag-policy">资本市场</span>
     </div>
-    <a class="ni-source" href="https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/" target="_blank" rel="noopener">TechCrunch · Jul 2</a>
+    <a class="ni-source" href="https://beincrypto.com/meta-compute-chip-stock-selloff/" target="_blank" rel="noopener">BeInCrypto · Jul 2</a>
   </div>
 
   <div class="news-item">
     <div class="ni-top">
-      <span class="ni-emoji">🏗️</span>
-      <span class="ni-title">台积电亚利桑那200亿美元增资获批</span>
+      <span class="ni-emoji">📉</span>
+      <span class="ni-title">费城半导体指数连续暴跌：闪迪-14%、希捷-10%、Arm-6%</span>
     </div>
-    <div class="ni-body">台湾经济部投资审议委员会7月2日正式批准台积电向亚利桑那子公司注资<strong>$200亿</strong>美元的计划，用于建设12英寸晶圆厂和先进封装设施。台积电在亚利桑那累计投资已达<strong>$1,650亿</strong>美元，首座晶圆厂已投产良率92%。</div>
+    <div class="ni-body">7月2日美股收盘，道指涨<strong>1.14%</strong>创新高，但纳指跌<strong>0.8%</strong>。存储/半导体板块集体跳水——闪迪<strong>-14%+</strong>、希捷<strong>-10%+</strong>、西部数据<strong>-9%+</strong>、Arm<strong>-6%+</strong>、美光/英特尔<strong>-5%+</strong>、AMD/ASML<strong>-4%+</strong>。光通信概念全数走低：MaxLinear -17%、AAOI -13%、康宁 -11%、Marvell -10%。英伟达仅跌1.25%，相对抗跌。特斯拉因Q2交付超预期但市场获利了结跌<strong>7%</strong>。</div>
     <div class="ni-tags">
       <span class="tag tag-us">美国</span>
-      <span class="tag tag-supply">产能扩张</span>
+      <span class="tag tag-policy">资本市场</span>
     </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260702PD234/taiwan-tsmc-investment-arizona-subsidiary.html" target="_blank" rel="noopener">DIGITIMES · Jul 3</a>
+    <a class="ni-source" href="http://finance.sina.com.cn/wm/2026-07-03/doc-inifnnxk3771188.shtml" target="_blank" rel="noopener">新浪财经 · 21世纪经济报道 · Jul 3</a>
   </div>
 
   <div class="news-item">
     <div class="ni-top">
-      <span class="ni-emoji">🧪</span>
-      <span class="ni-title">三星HBM4E良率突破70%，AI存储竞赛白热化</span>
+      <span class="ni-emoji">📱</span>
+      <span class="ni-title">苹果+5%创新高：折叠屏iPhone备货大幅上调，iPhone 18预锁定</span>
     </div>
-    <div class="ni-body">三星电子内部测试显示HBM4E（第七代高带宽内存）可靠性良率超过<strong>70%</strong>，距商业化量产更进一步。与SK海力士、美光的三方HBM技术竞赛持续升级，HBM4E将搭载于下一代NVIDIA及自研AI芯片。</div>
+    <div class="ni-body">苹果7月2日逆势大涨近<strong>5%</strong>。据财联社消息，苹果已要求供应商大幅提高折叠屏iPhone备货预期，并为iPhone 18高端系列提前预留通用零部件。此举显示苹果对下一代产品信心充足，在大盘芯片抛售中成为避风港。</div>
     <div class="ni-tags">
-      <span class="tag tag-gl">全球</span>
+      <span class="tag tag-us">美国</span>
+      <span class="tag tag-supply">消费电子</span>
+    </div>
+    <a class="ni-source" href="http://finance.sina.com.cn/wm/2026-07-03/doc-inifnnxk3771188.shtml" target="_blank" rel="noopener">新浪财经 · Jul 3</a>
+  </div>
+
+  <div class="news-item">
+    <div class="ni-top">
+      <span class="ni-emoji">⚖️</span>
+      <span class="ni-title">DRAM反垄断诉讼：三星/SK海力士/美光被控合谋限制供应</span>
+    </div>
+    <div class="ni-body">6月25日提交的集体反垄断诉讼指控三星、SK海力士和美光<strong>合谋限制消费级DRAM供应</strong>，优先向高利润AI/HBM领域倾斜产能。自2022年以来DRAM价格累计上涨<strong>700%</strong>。美光最新季度营收同比翻四倍，毛利率从39%飙升至<strong>84.9%</strong>，利润暴增<strong>1,398%</strong>。三家控制全球<strong>90%+</strong> DRAM市场。</div>
+    <div class="ni-tags">
+      <span class="tag tag-us">美国</span>
       <span class="tag tag-mc">存储</span>
-      <span class="tag tag-ai">AI</span>
+      <span class="tag tag-policy">反垄断</span>
     </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260702PD226/samsung-hbm-hbm4-production-yield-rate.html" target="_blank" rel="noopener">DIGITIMES · Jul 3</a>
+    <a class="ni-source" href="https://www.edgen.tech/news/post/semiconductor-makers-push-second-round-of-price-hikes-from-july" target="_blank" rel="noopener">EDGEN · Jul 1</a>
   </div>
 
   <div class="news-item">
     <div class="ni-top">
-      <span class="ni-emoji">🚗</span>
-      <span class="ni-title">美光×通用汽车签署长期车用存储战略协议</span>
+      <span class="ni-emoji">🏛️</span>
+      <span class="ni-title">美国6月非农仅增5.7万人，大幅不及预期削弱加息紧迫性</span>
     </div>
-    <div class="ni-body">美光与通用汽车7月1日签署战略客户协议（SCA），确保长期供应LPDRAM、NOR和UFS NAND产品，支持通用下一代车辆平台量产。美光弗吉尼亚工厂完成升级改造，已累计披露<strong>16份</strong>战略供货协议。</div>
+    <div class="ni-body">美国6月非农就业数据爆冷仅增<strong>5.7万人</strong>，大幅不及预期。分析人士表示，这一数据削弱了美联储7月加息的紧迫性，但市场仍押注年底前收紧政策。现货黄金应声涨至<strong>$4,123/盎司</strong>（+2.3%），白银涨至$60.94/盎司（+3.04%）。贵金属板块强势领涨。</div>
     <div class="ni-tags">
       <span class="tag tag-us">美国</span>
-      <span class="tag tag-mc">存储</span>
-      <span class="tag tag-supply">汽车电子</span>
+      <span class="tag tag-policy">宏观</span>
     </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260702PR201/micron-general-motors-vehicle-memory-chips-production.html" target="_blank" rel="noopener">DIGITIMES · Jul 2</a>
+    <a class="ni-source" href="http://finance.sina.com.cn/wm/2026-07-03/doc-inifnnxk3771188.shtml" target="_blank" rel="noopener">新浪财经 · Jul 3</a>
   </div>
 
   <div class="news-item">
     <div class="ni-top">
-      <span class="ni-emoji">🌶️</span>
-      <span class="ni-title">OpenAI×博通发布首款自研AI推理芯片Jalapeño</span>
+      <span class="ni-emoji">🥊</span>
+      <span class="ni-title">Meta Compute冲击AI云厂商：CoreWeave -14%、Nebius -17%</span>
     </div>
-    <div class="ni-body">OpenAI与博通6月24日联合发布定制AI推理ASIC Jalapeño（西班牙语"辣椒"），专为大语言模型推理优化，9个月完成从立项到流片。OpenAI同时披露多代计算平台计划，2026年底前首次部署。标志着AI巨头全面开启"去英伟达化"自研芯片路径。</div>
-    <div class="ni-tags">
-      <span class="tag tag-us">美国</span>
-      <span class="tag tag-ai">AI</span>
-    </div>
-    <a class="ni-source" href="https://www.eet-china.com/news/202606258325.html" target="_blank" rel="noopener">EET China · Jun 25</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top">
-      <span class="ni-emoji">🧊</span>
-      <span class="ni-title">铠侠×闪迪启动332层BiCS10闪存样品交付</span>
-    </div>
-    <div class="ni-body">铠侠与闪迪7月3日联合宣布第10代BiCS FLASH（BiCS10）正式启动工程样品交付。首款产品为<strong>1Tb TLC</strong>型号，采用<strong>332层堆叠</strong>设计，读取速度<strong>4.8Gb/s</strong>，延续CMOS直接键合与间距选择栅极漏极两大核心工艺，面向AI系统与数据中心需求。</div>
-    <div class="ni-tags">
-      <span class="tag tag-gl">全球</span>
-      <span class="tag tag-mc">存储</span>
-      <span class="tag tag-ai">AI</span>
-    </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260703PR201/kioxia-flash-performance-shipments.html" target="_blank" rel="noopener">DIGITIMES · Jul 3</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top">
-      <span class="ni-emoji">🏠</span>
-      <span class="ni-title">LG电子切入ASIC设计服务，首款6nm芯片采用台积电代工</span>
-    </div>
-    <div class="ni-body">LG电子正式对外提供ASIC芯片设计服务，首款产品为韩国本土客户的<strong>6nm SoC</strong>（台积电代工），将用于LG扫地机器人。韩国"K-On-Device AI半导体"项目的重要落地案例，家电巨头跨界半导体设计。</div>
-    <div class="ni-tags">
-      <span class="tag tag-us">跨界</span>
-      <span class="tag tag-ai">AI</span>
-      <span class="tag tag-supply">供应链</span>
-    </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260702VL205/lg-electronics-asic-design-tsmc.html" target="_blank" rel="noopener">DIGITIMES · Jul 2</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top">
-      <span class="ni-emoji">🔄</span>
-      <span class="ni-title">Renesas出售时钟业务予SiTime，聚焦AI服务器和电动汽车</span>
-    </div>
-    <div class="ni-body">瑞萨电子完成将时钟/定时业务出售给美国SiTime（约$20亿美元交易），全面收紧产品组合围绕AI服务器、电动汽车、嵌入式计算及软件驱动芯片设计方向。</div>
+    <div class="ni-body">Meta Compute直接与自身供应商竞争——CoreWeave和Nebius此前为Meta提供GPU租赁服务，如今Meta反客为主。市场担心Meta的低价策略将大幅压缩AI云厂商利润空间。Magnificent 7其他成员当日多数上涨，资金从纯硬件/云厂商向综合平台型巨头转移。</div>
     <div class="ni-tags">
       <span class="tag tag-us">美国</span>
       <span class="tag tag-ai">AI</span>
-      <span class="tag tag-supply">转型</span>
+      <span class="tag tag-supply">竞争格局</span>
     </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260702VL216/renesas-sitime-business-embedded-ai-server.html" target="_blank" rel="noopener">DIGITIMES · Jul 3</a>
+    <a class="ni-source" href="https://beincrypto.com/meta-compute-chip-stock-selloff/" target="_blank" rel="noopener">BeInCrypto · Jul 2</a>
   </div>
 </div>
 
@@ -350,97 +322,98 @@
   <div class="news-item">
     <div class="ni-top">
       <span class="ni-emoji">🔥</span>
-      <span class="ni-title">全球近20家芯片厂商7月1日同步涨价——模拟芯片"疯狂7月"</span>
+      <span class="ni-title">全球20+芯片企业7月1日同步涨价——半导体"疯狂7月"全面开启</span>
     </div>
-    <div class="ni-body">7月1日成为全球模拟芯片涨价转折点。德州仪器（年内第四轮调价）、英飞凌、意法半导体领涨，国内<strong>士兰微（+15%起）、扬杰科技（+10~15%）、芯联集成（+15~25%）、斯达半导（+15%起）、华润微</strong>等全线跟进。AI服务器专用电源管理芯片涨幅<strong>15~25%</strong>，高压信号链模拟芯片涨幅<strong>10~15%</strong>。8英寸晶圆产能首次同比下滑0.3%，2026年降幅扩大至<strong>2.4%</strong>。</div>
+    <div class="ni-body">7月1日成为2026年全球半导体第二轮涨价潮的集中爆发日。德州仪器（年内第N轮）、英飞凌、意法半导体领涨，国内<strong>士兰微（+15~25%）、扬杰科技（+10~15%）、斯达半导（IGBT/SiC模块+15%起）、华润微</strong>等全线跟进。AI服务器电源管理芯片涨幅<strong>20~85%</strong>，功率半导体涨幅<strong>15~25%</strong>。上游铜、锡、钯等贵金属及硅片、电子特气、靶材全面涨价，成本压力逐级传导。</div>
     <div class="ni-tags">
       <span class="tag tag-cn">中国</span>
       <span class="tag tag-supply">涨价潮</span>
       <span class="tag tag-ai">AI</span>
     </div>
-    <a class="ni-source" href="https://www.eet-china.com/mp/a506115.html" target="_blank" rel="noopener">EET China · Jun 29</a>
+    <a class="ni-source" href="https://www.edgen.tech/news/post/semiconductor-makers-push-second-round-of-price-hikes-from-july" target="_blank" rel="noopener">EDGEN · Jul 1</a>
   </div>
 
   <div class="news-item">
     <div class="ni-top">
-      <span class="ni-emoji">⚡</span>
-      <span class="ni-title">国巨启动史上最广MLCC涨价，AI服务器需求引爆被动元件超级周期</span>
+      <span class="ni-emoji">🇨🇳</span>
+      <span class="ni-title">半导体开启提价窗口，国产芯片迎战略机遇期</span>
     </div>
-    <div class="ni-body">7月1日，全球被动元件龙头国巨（Yageo）正式启动史上覆盖最广的一轮涨价：MLCC、铝电解、钽电容、高分子铝电容、薄膜电容、超级电容全品类上调。村田、三星电机、太阳诱电等海外MLCC大厂同步发函，AI服务器用高容MLCC涨幅<strong>15~35%</strong>，部分稀缺型号现货翻倍。业内看涨至<strong>2027年底</strong>。</div>
+    <div class="ni-body">同济大学研究员宫超分析：本轮涨价以模拟/功率半导体为主，AI相关芯片涨幅突出，背后是需求拉动+供给缺口+原材料上涨三重驱动。国家统计局数据显示，1-5月半导体产业链利润亮眼：光电子器件制造<strong>+53.8%</strong>、半导体分立器件制造<strong>+40.6%</strong>、电子专用材料制造<strong>+665.4%</strong>。业内人士指出：芯片是个系统级工程，"热"的时候更要"冷"思考，避免盲目扎堆。</div>
+    <div class="ni-tags">
+      <span class="tag tag-cn">中国</span>
+      <span class="tag tag-policy">政策/产业</span>
+      <span class="tag tag-supply">国产替代</span>
+    </div>
+    <a class="ni-source" href="https://finance.sina.com.cn/tech/roll/2026-07-03/doc-inifnxny5611853.shtml" target="_blank" rel="noopener">新浪科技 · 家电网 · Jul 3</a>
+  </div>
+
+  <div class="news-item">
+    <div class="ni-top">
+      <span class="ni-emoji">📡</span>
+      <span class="ni-title">艾佛光通：国内首条8英寸BAW滤波芯片IDM产线满产运行</span>
+    </div>
+    <div class="ni-body">艾佛光通在广州研发生产基地实现国内首条<strong>8英寸SABAR体声波滤波芯片IDM产线</strong>稳定量产，两条产线目前处于<strong>满产状态</strong>。作为国内唯一、全球第三家具备5G/6G体声波滤波芯片独立知识产权的企业，其产品关键性能较美日竞品提高<strong>20%</strong>，通过原材料国产化实现成本降低<strong>30%</strong>，具备更优定价基础。</div>
+    <div class="ni-tags">
+      <span class="tag tag-cn">中国</span>
+      <span class="tag tag-supply">国产突破</span>
+      <span class="tag tag-gl">5G/6G</span>
+    </div>
+    <a class="ni-source" href="https://finance.sina.com.cn/tech/roll/2026-07-03/doc-inifnxny5611853.shtml" target="_blank" rel="noopener">新浪科技 · Jul 3</a>
+  </div>
+
+  <div class="news-item">
+    <div class="ni-top">
+      <span class="ni-emoji">🧠</span>
+      <span class="ni-title">欧冶半导体AI芯片达成100万台量产交付里程碑</span>
+    </div>
+    <div class="ni-body">欧冶半导体副总裁史祯寰透露，公司AI芯片于6月下旬达成<strong>100万台</strong>量产交付。他指出当前国产芯片企业面临两大机遇：AI应用爆发带来的增量市场需求、国际厂商涨价使客户对供应链国产化需求增长。建议行业从"能用"到"好用"提升系统级竞争力。</div>
     <div class="ni-tags">
       <span class="tag tag-cn">中国</span>
       <span class="tag tag-ai">AI</span>
-      <span class="tag tag-supply">被动元件</span>
+      <span class="tag tag-supply">量产突破</span>
     </div>
-    <a class="ni-source" href="https://fund.eastmoney.com/a/202607013790472976.html" target="_blank" rel="noopener">东方财富 · Jul 1</a>
+    <a class="ni-source" href="https://finance.sina.com.cn/tech/roll/2026-07-03/doc-inifnxny5611853.shtml" target="_blank" rel="noopener">新浪科技 · Jul 3</a>
   </div>
 
   <div class="news-item">
     <div class="ni-top">
-      <span class="ni-emoji">🇰🇷</span>
-      <span class="ni-title">华为昇腾950PR/950DT进军韩国AI市场，挑战英伟达H20</span>
+      <span class="ni-emoji">📦</span>
+      <span class="ni-title">存储涨价7年15倍，先进封装订单排至2027年</span>
     </div>
-    <div class="ni-body">华为计划2026年Q4以昇腾系列AI加速芯片和Atlas 950 SuperPod计算系统正式进入韩国市场。昇腾950PR已于4月量产（面向推理优化），950DT专为训练优化，搭载华为<strong>自研HBM</strong>高带宽内存。华为韩国已完成分销商协议签署，定价约为英伟达H20的<strong>四分之一</strong>。</div>
+    <div class="ni-body">AI爆发式增长彻底重塑半导体行业底层逻辑。存储芯片自2019年以来累计涨幅达<strong>15倍</strong>，先进封装（CoWoS等）订单已排至<strong>2027年</strong>。海外巨头将产能全力向HBM、DDR5及企业级SSD倾斜，战略性退出传统存量市场，为国产存储产业链打开"规模增长-客户导入-产品升级"正向循环窗口。</div>
     <div class="ni-tags">
       <span class="tag tag-cn">中国</span>
-      <span class="tag tag-ai">AI</span>
-      <span class="tag tag-gl">全球化</span>
+      <span class="tag tag-mc">存储</span>
+      <span class="tag tag-supply">封装</span>
     </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260702PD224/huawei-ascend-chips-nvidia-market.html" target="_blank" rel="noopener">DIGITIMES · Jul 3</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top">
-      <span class="ni-emoji">⚖️</span>
-      <span class="ni-title">英诺赛科vs英飞凌GaN专利战上海电子展升温</span>
-    </div>
-    <div class="ni-body">electronica Shanghai 2026开幕首日，英诺赛科指控英飞凌展出的GaN功率产品已被中国法院禁令禁止销售，展品随即被移除。ITC 5月终裁认定英诺赛科侵犯英飞凌专利签发排除令；但中国最高法院6月维持对英飞凌的临时禁令——中美司法体系对同一GaN专利作出<strong>截然相反</strong>裁决，专利战成为全球GaN竞争的武器。</div>
-    <div class="ni-tags">
-      <span class="tag tag-cn">中国</span>
-      <span class="tag tag-policy">专利/法律</span>
-      <span class="tag tag-supply">GaN</span>
-    </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260703PD214/gan-patent-innoscience-infineon-shanghai.html" target="_blank" rel="noopener">DIGITIMES · Jul 3</a>
+    <a class="ni-source" href="https://finance.sina.com.cn/jjxw/2026-07-01/doc-inifheze6325684.shtml" target="_blank" rel="noopener">新浪财经 · Jul 1</a>
   </div>
 
   <div class="news-item">
     <div class="ni-top">
       <span class="ni-emoji">📈</span>
-      <span class="ni-title">中国功率芯片涨价推动台湾供应商优势凸显</span>
+      <span class="ni-title">半导体材料设备指数7月1日涨超3.68%，国产替代加速</span>
     </div>
-    <div class="ni-body">中国大陆功率器件厂商密集涨价后，台湾电源管理IC供应商表示其灵活度、品质与服务优势在"去中国供应链"趋势中更加显现。台湾被动元件供应商也因AI服务器和汽车需求同步恢复增长势头。</div>
+    <div class="ni-body">7月1日，半导体材料设备指数(931743)强势上涨<strong>3.68%</strong>，盘中最高涨超6%。沪硅产业Q1营收<strong>+35.22%</strong>，300mm硅片销量同比增幅超<strong>90%</strong>，产能达85万片/月。神工股份硅零部件营收<strong>+100%</strong>。中船特气新增7500吨三氟化氮和10000吨超纯氨气产能。涨价潮+国产替代双轮驱动。</div>
     <div class="ni-tags">
       <span class="tag tag-cn">中国</span>
-      <span class="tag tag-supply">供应链转移</span>
+      <span class="tag tag-supply">材料/设备</span>
+      <span class="tag tag-mc">国产替代</span>
     </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260702PD227/power-ic-supply-chain-competition-price-2026.html" target="_blank" rel="noopener">DIGITIMES · Jul 3</a>
+    <a class="ni-source" href="https://news.qq.com/rain/a/20260701A0399U00" target="_blank" rel="noopener">腾讯新闻 · Jul 1</a>
   </div>
 
   <div class="news-item">
     <div class="ni-top">
-      <span class="ni-emoji">📉</span>
-      <span class="ni-title">费城半导体指数6月5日暴跌10%，市值蒸发1.3万亿美元</span>
+      <span class="ni-emoji">📊</span>
+      <span class="ni-title">科创50半年暴涨64%，但7月开门黑：芯片股遭获利了结</span>
     </div>
-    <div class="ni-body">6月5日费城半导体指数单日暴跌<strong>10.26%</strong>（创2020年3月以来最大单日跌幅），板块总市值蒸发超<strong>$1.3万亿</strong>。导火索为博通Q3 AI芯片营收指引$160亿低于预期$172亿，引发全球芯片板块获利兑现恐慌。A股科创50单日跌超4%，SK海力士一度跌近10%。半导体+通信成交额占比峰值超40%，属"教科书级别行情终极末期量能特征"。</div>
+    <div class="ni-body">2026年上半年A股半导体产业链爆发，<strong>科创50指数半年大涨超64%</strong>、创业板指涨超35%。但7月1日受隔夜美股芯片暴跌拖累，A股芯片板块大幅回调。江波龙跌<strong>8%</strong>，兆易创新跌<strong>10%</strong>，约50只芯片龙头逼近跌停。市场分析认为短期获利了结压力大，但"涨价主线+业绩确定性"仍是下半年核心逻辑。</div>
     <div class="ni-tags">
       <span class="tag tag-cn">中国</span>
       <span class="tag tag-policy">资本市场</span>
     </div>
-    <a class="ni-source" href="https://baijiahao.baidu.com/s?id=1868785636383053623&wfr=spider&for=pc" target="_blank" rel="noopener">百家号 · Jun 23</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top">
-      <span class="ni-emoji">⏰</span>
-      <span class="ni-title">AI芯片复杂度拉长电子材料订货窗口至6个月</span>
-    </div>
-    <div class="ni-body">DuPont分拆上市的电子材料公司Qnity警告：AI芯片的复杂度正将上游电子材料的订货窗口拉伸至<strong>6个月</strong>，上游材料供应链已成为AI相关出货的关键瓶颈。</div>
-    <div class="ni-tags">
-      <span class="tag tag-gl">全球</span>
-      <span class="tag tag-ai">AI</span>
-      <span class="tag tag-supply">材料瓶颈</span>
-    </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260630PD232.html" target="_blank" rel="noopener">DIGITIMES · Jun 30</a>
+    <a class="ni-source" href="https://baijiahao.baidu.com/s?id=1869566629533553409" target="_blank" rel="noopener">百家号 · Jul 1</a>
   </div>
 </div>
 
@@ -449,101 +422,124 @@
   <div class="sec-title data">📊 关键市场数据</div>
   <table class="data-table">
     <thead>
-      <tr><th>指标</th><th>数据</th><th>变化</th></tr>
+      <tr><th>指标</th><th>数据</th><th>变化/备注</th></tr>
     </thead>
     <tbody>
-      <tr><td>TI 2026Q1营收</td><td>$48.3亿</td><td class="up">同比+19%</td></tr>
-      <tr><td>TI模拟芯片部门营收</td><td>$39.24亿</td><td class="up">同比+22%</td></tr>
-      <tr><td>英飞凌Q1营收</td><td>€36.62亿</td><td class="up">持续增长</td></tr>
-      <tr><td>ST 2026数据中心收入目标</td><td>≈$10亿</td><td class="up">上调</td></tr>
-      <tr><td>8英寸晶圆产能(2025)</td><td>首次同比下滑</td><td class="down">-0.3%</td></tr>
-      <tr><td>8英寸晶圆产能(2026预测)</td><td>降幅扩大</td><td class="down">-2.4%</td></tr>
-      <tr><td>8英寸产线平均稼动率</td><td>92~96%</td><td>无富余产能</td></tr>
-      <tr><td>AI服务器MLCC涨幅</td><td>15~35%</td><td class="up">稀缺型号翻倍</td></tr>
-      <tr><td>三星HBM4E良率</td><td>70%+</td><td class="up">商业化加速</td></tr>
-      <tr><td>铠侠BiCS10堆叠层数</td><td>332层</td><td class="up">1Tb TLC</td></tr>
-      <tr><td>台积电亚利桑那累计投资</td><td>$1,650亿</td><td class="up">+$200亿增资获批</td></tr>
-      <tr><td>费城半导体指数6/5</td><td>-10.26%</td><td class="down">创2020年来最大单日跌幅</td></tr>
+      <tr><td>费城半导体指数 (7/1)</td><td>-6%+</td><td class="down">Meta Compute冲击</td></tr>
+      <tr><td>费城半导体指数 (7/2)</td><td>-5.44%</td><td class="down">两日累跌11%</td></tr>
+      <tr><td>闪迪 (7/2)</td><td>-14%+</td><td class="down">存储板块领跌</td></tr>
+      <tr><td>美光科技</td><td>毛利率84.9%</td><td class="up">同比+46pp</td></tr>
+      <tr><td>DRAM累计涨幅 (2022-2026)</td><td>+700%</td><td class="up">反垄断诉讼中</td></tr>
+      <tr><td>AI服务器电源芯片涨幅</td><td>20~85%</td><td class="up">TI/MPS/ST/NXP</td></tr>
+      <tr><td>功率半导体涨幅 (7月)</td><td>15~25%</td><td class="up">年内第二轮</td></tr>
+      <tr><td>三星HBM4E良率</td><td>70%+</td><td class="up">规模化盈利门槛</td></tr>
+      <tr><td>三星1.4nm量产时间</td><td>2029年</td><td class="down">推迟2年</td></tr>
+      <tr><td>美国6月非农</td><td>5.7万</td><td class="down">大幅不及预期</td></tr>
+      <tr><td>现货黄金</td><td>$4,123/oz</td><td class="up">+2.3%</td></tr>
+      <tr><td>科创50 H1涨幅</td><td>+64%</td><td class="up">领跑全球</td></tr>
+      <tr><td>中国电子专用材料利润</td><td>+665.4%</td><td class="up">1-5月累计</td></tr>
+      <tr><td>沪硅产业300mm硅片销量</td><td>+90% YoY</td><td class="up">产能85万片/月</td></tr>
     </tbody>
   </table>
 </div>
 
-<!-- ==================== 全球供应链 ==================== -->
+<!-- ==================== 🌐 全球供应链 ==================== -->
 <div class="section">
   <div class="sec-title gl">🌐 全球供应链关键信号</div>
 
   <div class="news-item">
     <div class="ni-top">
+      <span class="ni-emoji">⏰</span>
+      <span class="ni-title">三星官宣：1.4nm量产推迟至2029年，先进制程赛道重新洗牌</span>
+    </div>
+    <div class="ni-body">7月1日三星SAFE Forum上正式宣布：第一代1.4nm GAA工艺SF1.4量产锁定<strong>2029年</strong>（此前承诺2027年），迭代版SF1.4+于<strong>2030年</strong>。落后台积电规划2028年节点一年，与英特尔节奏持平。三星战略转向：放弃激进追赶，优先打磨<strong>2nm良率</strong>，待产线稳定盈利后再冲击1.4nm。为1.4nm研发已部署<strong>$4亿</strong>ASML High NA EUV光刻机。</div>
+    <div class="ni-tags">
+      <span class="tag tag-gl">全球</span>
+      <span class="tag tag-supply">先进制程</span>
+      <span class="tag tag-policy">战略调整</span>
+    </div>
+    <a class="ni-source" href="https://baijiahao.baidu.com/s?id=1869557095900725365" target="_blank" rel="noopener">百家号 · Jul 2</a>
+  </div>
+
+  <div class="news-item">
+    <div class="ni-top">
+      <span class="ni-emoji">🍎</span>
+      <span class="ni-title">苹果启动1.4nm订单多厂布局，三星成台积电备选</span>
+    </div>
+    <div class="ni-body">供应链消息显示，苹果出于分散单一代工风险考量，已提前启动<strong>1.4nm芯片订单多厂布局</strong>，不再将全部先进制程交由台积电独家代工，三星成为重点备选合作方。但由于三星1.4nm量产晚台积电一年，最早只能承接<strong>2029年之后</strong>的迭代机型芯片，苹果会谨慎分批释放订单。</div>
+    <div class="ni-tags">
+      <span class="tag tag-gl">全球</span>
+      <span class="tag tag-supply">供应链多元化</span>
+    </div>
+    <a class="ni-source" href="https://baijiahao.baidu.com/s?id=1869557095900725365" target="_blank" rel="noopener">百家号 · Jul 2</a>
+  </div>
+
+  <div class="news-item">
+    <div class="ni-top">
+      <span class="ni-emoji">🇰🇷</span>
+      <span class="ni-title">韩国股市遭血洗：KOSPI触发熔断，三星-7%、SK海力士-9%</span>
+    </div>
+    <div class="ni-body">美国芯片抛售蔓延至亚洲：KOSPI指数开盘暴跌超<strong>6%</strong>触发自动停牌机制。三星电子跌超<strong>7%</strong>，SK海力士跌超<strong>9%</strong>。此次暴跌延续了此前大型科技股抛售向亚洲芯片制造商蔓延的模式。</div>
+    <div class="ni-tags">
+      <span class="tag tag-gl">全球</span>
+      <span class="tag tag-policy">资本市场</span>
+      <span class="tag tag-mc">存储</span>
+    </div>
+    <a class="ni-source" href="https://beincrypto.com/meta-compute-chip-stock-selloff/" target="_blank" rel="noopener">BeInCrypto · Jul 2</a>
+  </div>
+
+  <div class="news-item">
+    <div class="ni-top">
       <span class="ni-emoji">🔧</span>
-      <span class="ni-title">台积电8英寸产能削减计划推进</span>
+      <span class="ni-title">三星HBM4E良率突破70%，AI存储进入规模化盈利周期</span>
     </div>
-    <div class="ni-body">台积电自2025年起启动8英寸产能削减，部分工厂预计2027年完全退出；三星计划关闭器兴园区8英寸代工厂S7（月产能约5万片）。AI配套模拟芯片毛利率远超传统消费芯片，代工厂优先分配产能给算力、新能源订单，产能虹吸效应加剧。</div>
+    <div class="ni-body">三星SAFE Forum同步披露HBM4E量产良率稳定突破<strong>70%</strong>，该水平是规模化盈利的关键门槛。此前HBM4E长期受低良率制约，无法大规模交付。70%良率意味着三星高端算力存储产能将持续释放，在AI算力高景气周期中收获大额订单，为先进制程研发提供稳定现金流支撑。</div>
     <div class="ni-tags">
       <span class="tag tag-gl">全球</span>
-      <span class="tag tag-supply">产能重构</span>
+      <span class="tag tag-mc">存储</span>
+      <span class="tag tag-ai">AI</span>
     </div>
-    <a class="ni-source" href="https://www.eet-china.com/mp/a506115.html" target="_blank" rel="noopener">EET China · Jun 29</a>
+    <a class="ni-source" href="https://baijiahao.baidu.com/s?id=1869557095900725365" target="_blank" rel="noopener">百家号 · Jul 2</a>
   </div>
 
   <div class="news-item">
     <div class="ni-top">
-      <span class="ni-emoji">📦</span>
-      <span class="ni-title">新加坡对NVIDIA关联服务器案追加欺诈洗钱指控</span>
+      <span class="ni-emoji">💹</span>
+      <span class="ni-title">花旗警告：芯片涨价将冲击超大规模客户ROI</span>
     </div>
-    <div class="ni-body">新加坡对涉及NVIDIA AI服务器走私的案件追加欺诈和洗钱指控，Supermicro员工被拘禁。AI服务器供应链合规审查力度持续加大。</div>
+    <div class="ni-body">花旗美国股票策略主管Scott Chronert警告，半导体价格持续上涨最终将与超大规模客户（Amazon、Alphabet、Meta、Microsoft）的ROI预期发生冲突。Barclays分析师指出"从AI超大规模客户到AI赋能者的轮动已推动半导体出现壮观涨势"。印度央行也将AI股票估值飙升列为金融稳定风险。</div>
     <div class="ni-tags">
       <span class="tag tag-gl">全球</span>
-      <span class="tag tag-supply">合规风险</span>
+      <span class="tag tag-ai">AI</span>
+      <span class="tag tag-policy">风险预警</span>
     </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260702VL213/chips-investigation-nvidia-supermicro.html" target="_blank" rel="noopener">DIGITIMES · Jul 2</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top">
-      <span class="ni-emoji">🇯🇵</span>
-      <span class="ni-title">韩国寻求复制日本熊本半导体集群模式</span>
-    </div>
-    <div class="ni-body">韩国执政党官员考察日本熊本TSMC(JASM)半导体集群后，计划在西南部建设新的半导体产业聚集区，但承认日本模式并非容易复制——水资源、基础设施和地缘政治条件差异明显。</div>
-    <div class="ni-tags">
-      <span class="tag tag-gl">全球</span>
-      <span class="tag tag-supply">集群竞争</span>
-    </div>
-    <a class="ni-source" href="https://www.digitimes.com/news/a20260702VL217/kumamoto-tsmc-jasm-water-region.html" target="_blank" rel="noopener">DIGITIMES · Jul 3</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top">
-      <span class="ni-emoji">🇺🇸</span>
-      <span class="ni-title">US Section 232半导体进口关税正式生效</span>
-    </div>
-    <div class="ni-body">美国Section 232半导体进口关税已正式生效，初始税率0%逐步递增，分两阶段推进以强化国家安全。同步收紧AI芯片出口管制（BIS新TPP阈值），中国以稀土限制反制，全球半导体供应链重组加速。</div>
-    <div class="ni-tags">
-      <span class="tag tag-us">美国</span>
-      <span class="tag tag-policy">贸易政策</span>
-    </div>
-    <a class="ni-source" href="https://www.chrobinson.com/en-us/resources/insights-and-advisories/client-advisories/2026q1/01-15-client-advisory-guidance-on-section-232-semiconductor-import-duties-for-2026/" target="_blank" rel="noopener">C.H. Robinson Advisory</a>
+    <a class="ni-source" href="https://www.edgen.tech/news/post/semiconductor-makers-push-second-round-of-price-hikes-from-july" target="_blank" rel="noopener">EDGEN · Jul 1</a>
   </div>
 </div>
 
 <!-- ==================== 核心主线 ==================== -->
 <div class="section">
-  <div class="sec-title main">🔑 四大核心主线</div>
+  <div class="sec-title main">🔑 五大核心主线</div>
 
   <div class="main-item">
     <span class="mi-num">1</span>
-    <span class="mi-text"><strong>AI巨头自研芯片浪潮</strong>：Anthropic（三星2nm）、OpenAI（Jalapeño×博通）、Google、Amazon、Microsoft、Meta六巨头同步自研，"去英伟达化"趋势不可逆</span>
+    <span class="mi-text"><strong>Meta Compute击穿"AI算力稀缺"叙事，全球芯片股两日暴跌11%</strong>：Meta宣布出售过剩AI算力，瞬间逆转市场对AI芯片"永远供不应求"的核心假设。费城半导体指数两日累跌11%，存储/光通信板块领跌，韩国KOSPI触发熔断。这是2026年AI牛市以来最严重的信仰危机。</span>
   </div>
   <div class="main-item">
     <span class="mi-num">2</span>
-    <span class="mi-text"><strong>模拟/功率芯片涨价潮进入"疯狂7月"</strong>：全球近20家厂商7月1日同步调价，8英寸产能收缩+AI需求虹吸=供需双驱动，国产模拟芯片获周期红利突破中端市场</span>
+    <span class="mi-text"><strong>半导体"疯狂7月"涨价潮全面开启</strong>：全球20+企业7月1日同步调价，功率芯片+15~25%、AI电源芯片+20~85%。DRAM自2022年累涨700%，反垄断诉讼同步推进。涨价逻辑短期坚挺但花旗/巴克莱/印度央行已密集预警。</span>
   </div>
   <div class="main-item">
     <span class="mi-num">3</span>
-    <span class="mi-text"><strong>华为昇腾出海韩国+GaN专利战</strong>：华为首次将AI芯片推向海外（韩国Q4），英诺赛科vs英飞凌GaN专利战中美司法"相反裁决"，中国半导体法律武器化趋势显现</span>
+    <span class="mi-text"><strong>三星战略大转弯：1.4nm推迟至2029年，2nm良率优先</strong>：SAFE Forum释放关键信号——全球先进制程竞赛从"一味追赶节点"转向"盈利优先、良率优先"。三星落后台积电一年但HBM4E良率突破70%形成业绩缓冲。</span>
   </div>
   <div class="main-item">
     <span class="mi-num">4</span>
-    <span class="mi-text"><strong>台积电亚利桑那$1,650亿重构全球芯片供应</strong>：+$200亿增资获批，先进封装设施同步建设，美国本土先进制程产能格局重塑</span>
+    <span class="mi-text"><strong>中国半导体"涨价+国产替代"双窗口期打开</strong>：全球涨价潮下国内模拟/功率/存储全链条受益，国家统计局数据验证利润高增。艾佛光通BAW滤波芯片、欧冶AI芯片达百万级量产，国产替代从"能用"向"好用"升级，但高精度信号链等高端细分仍存差距。</span>
+  </div>
+  <div class="main-item">
+    <span class="mi-num">5</span>
+    <span class="mi-text"><strong>供应链多元化与地缘重构加速</strong>：苹果1.4nm订单开放三星竞标，打破台积电独家格局。美国非农爆冷+黄金突破$4,100，宏观不确定性加剧。先进封装订单排至2027年，半导体材料全线涨价——产业链正在经历结构性重塑。</span>
   </div>
 </div>
 
@@ -551,7 +547,7 @@
 
 <div class="footer">
   Semitech · 电子行业动态简报 · 数据来源：公开媒体报道 · 仅供参考，不构成投资建议<br>
-  上次更新：2026-07-03 · 下次更新：2026-07-04 12:00
+  上次更新：2026-07-03 12:00 · 下次更新：2026-07-04 12:00
 </div>
 
 </body>
