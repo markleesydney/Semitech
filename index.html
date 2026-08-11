@@ -1,327 +1,820 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semitech · 电子行业动态简报 · 2026-08-07</title>
-  <style>
-    :root {
-      --bg: #0f172a; --card: #1e293b; --primary: #1e3a5f;
-      --accent: #3b82f6; --accent2: #ef4444; --accent3: #22c55e; --accent4: #f59e0b;
-      --border: #334155; --text: #e2e8f0; --muted: #94a3b8;
-      --tag-us: #1e3a5f; --tag-us-t: #60a5fa;
-      --tag-cn: #7f1d1d; --tag-cn-t: #fca5a5;
-      --tag-gl: #064e3b; --tag-gl-t: #6ee7b7;
-      --tag-ai: #3b0764; --tag-ai-t: #c4b5fd;
-      --tag-mc: #78350f; --tag-mc-t: #fcd34d;
-      --tag-policy: #831843; --tag-policy-t: #f9a8d4;
-      --tag-supply: #164e63; --tag-supply-t: #67e8f9;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-    .topbar { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f2847 100%); border-bottom: 1px solid var(--border); color: #fff; padding: 20px 20px 16px; text-align: center; }
-    .topbar h1 { font-size: 23px; font-weight: 700; letter-spacing: 1px; background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .topbar .sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
-    .stats { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 16px; background: #1a2744; border-bottom: 1px solid var(--border); justify-content: center; }
-    .stat { flex: 1 1 130px; min-width: 120px; max-width: 200px; text-align: center; padding: 10px 8px; border-radius: 10px; background: #162032; border: 1px solid var(--border); }
-    .stat .sv { font-size: 17px; font-weight: 700; }
-    .stat .sv.red { color: #ef4444; } .stat .sv.green { color: #22c55e; } .stat .sv.blue { color: #3b82f6; } .stat .sv.purple { color: #a78bfa; } .stat .sv.amber { color: #f59e0b; } .stat .sv.cyan { color: #06b6d4; }
-    .stat .sl { font-size: 11px; color: var(--muted); margin-top: 2px; }
-    .container { max-width: 920px; margin: 0 auto; padding: 16px 16px 40px; }
-    .section { margin-bottom: 26px; }
-    .sec-title { font-size: 17px; font-weight: 700; margin-bottom: 12px; padding-left: 12px; border-left: 4px solid; color: #f1f5f9; }
-    .sec-title.us { border-color: var(--accent); } .sec-title.cn { border-color: var(--accent2); } .sec-title.gl { border-color: var(--accent3); } .sec-title.data { border-color: var(--accent4); } .sec-title.main { border-color: #a78bfa; }
-    .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; transition: border-color 0.15s; }
-    .news-item:hover { border-color: #475569; }
-    .ni-top { display: flex; align-items: flex-start; gap: 8px; }
-    .ni-emoji { font-size: 20px; line-height: 1.4; flex-shrink: 0; }
-    .ni-title { font-size: 15px; font-weight: 600; color: #f1f5f9; }
-    .ni-body { font-size: 13px; color: #94a3b8; margin-top: 6px; line-height: 1.65; }
-    .ni-body strong { color: #fca5a5; }
-    .ni-tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-    .ni-source { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; font-size: 11px; color: var(--muted); text-decoration: none; border: 1px solid var(--border); border-radius: 6px; padding: 3px 8px; background: #162032; width: fit-content; word-break: break-all; }
-    .ni-source:hover { border-color: var(--accent); color: #60a5fa; background: #1e3a5f; }
-    .ni-source::before { content: "🔗"; font-size: 10px; }
-    .tag { font-size: 11px; padding: 2px 8px; border-radius: 5px; font-weight: 500; white-space: nowrap; }
-    .tag-us { background: var(--tag-us); color: var(--tag-us-t); }
-    .tag-cn { background: var(--tag-cn); color: var(--tag-cn-t); }
-    .tag-gl { background: var(--tag-gl); color: var(--tag-gl-t); }
-    .tag-ai { background: var(--tag-ai); color: var(--tag-ai-t); }
-    .tag-mc { background: var(--tag-mc); color: var(--tag-mc-t); }
-    .tag-policy { background: var(--tag-policy); color: var(--tag-policy-t); }
-    .tag-supply { background: var(--tag-supply); color: var(--tag-supply-t); }
-    .data-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; }
-    .data-table th { background: #162032; font-weight: 600; padding: 9px 10px; text-align: left; border-bottom: 2px solid var(--border); color: #e2e8f0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .data-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); color: #cbd5e1; }
-    .data-table tr:hover td { background: #162032; }
-    .up { color: #ef4444; font-weight: 600; }
-    .down { color: #22c55e; font-weight: 600; }
-    .main-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; }
-    .main-item .mi-num { display: inline-block; width: 28px; height: 28px; background: #7c3aed; color: #fff; border-radius: 6px; text-align: center; font-weight: 700; font-size: 14px; line-height: 28px; margin-right: 8px; flex-shrink: 0; }
-    .main-item .mi-title { font-size: 14px; font-weight: 600; color: #e2e8f0; }
-    .main-item .mi-desc { font-size: 12.5px; color: #94a3b8; margin-top: 4px; padding-left: 36px; }
-    .footer { text-align: center; font-size: 12px; color: var(--muted); padding: 20px; border-top: 1px solid var(--border); margin-top: 16px; }
-    @media (max-width: 600px) { .stats { gap: 6px; padding: 10px; } .stat { flex: 1 1 100px; min-width: 100px; } .container { padding: 10px 10px 30px; } .ni-emoji { font-size: 18px; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semitech 电子行业每日简报 | 2026年8月11日</title>
+<style>
+  :root {
+    --bg-primary: #0f1117;
+    --bg-secondary: #1a1d28;
+    --bg-card: #1e2130;
+    --bg-card-hover: #252838;
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --text-muted: #6b7280;
+    --accent-blue: #60a5fa;
+    --accent-green: #34d399;
+    --accent-red: #f87171;
+    --accent-yellow: #fbbf24;
+    --accent-purple: #a78bfa;
+    --accent-teal: #2dd4bf;
+    --border: #2d3148;
+    --shadow: 0 4px 24px rgba(0,0,0,0.3);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a1d28 0%, #0f1117 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-teal));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    color: #fff;
+  }
+  .logo-text h1 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .logo-text span {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: block;
+  }
+  .header-meta {
+    text-align: right;
+  }
+  .header-meta .date {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .header-meta .time-range {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 24px; }
+
+  /* Stats Bar */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    text-align: center;
+  }
+  .stat-card .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-card .stat-value.red { background: linear-gradient(135deg, var(--accent-red), #fb923c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .stat-card .stat-value.green { background: linear-gradient(135deg, var(--accent-green), var(--accent-teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .stat-card .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-title .flag { font-size: 24px; }
+  .section-title .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-us { background: var(--accent-blue); }
+  .dot-cn { background: var(--accent-red); }
+  .dot-global { background: var(--accent-green); }
+
+  /* News Cards */
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 16px;
+  }
+  .news-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .news-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+  .news-card .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tag-chip { background: rgba(96,165,250,0.15); color: var(--accent-blue); }
+  .tag-memory { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
+  .tag-policy { background: rgba(251,191,36,0.15); color: var(--accent-yellow); }
+  .tag-capital { background: rgba(52,211,153,0.15); color: var(--accent-green); }
+  .tag-supply { background: rgba(248,113,113,0.15); color: var(--accent-red); }
+  .tag-foundry { background: rgba(45,212,191,0.15); color: var(--accent-teal); }
+  .news-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    color: var(--text-primary);
+  }
+  .news-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 12px;
+  }
+  .news-card .meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .news-card .source-link {
+    font-size: 12px;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .news-card .source-link:hover { color: var(--accent-teal); text-decoration: underline; }
+  .news-card .time-badge {
+    font-size: 11px;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.05);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  /* Comparison Table */
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  thead { background: var(--bg-secondary); }
+  th {
+    text-align: left;
+    padding: 14px 18px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--border);
+  }
+  td {
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(45,49,72,0.5);
+  }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  .td-up { color: var(--accent-red); font-weight: 600; }
+  .td-down { color: var(--accent-green); font-weight: 600; }
+  .td-neutral { color: var(--text-secondary); }
+
+  /* Themes */
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+  .theme-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 20px;
+  }
+  .theme-card:nth-child(2) { border-left-color: var(--accent-red); }
+  .theme-card:nth-child(3) { border-left-color: var(--accent-green); }
+  .theme-card:nth-child(4) { border-left-color: var(--accent-purple); }
+  .theme-card:nth-child(5) { border-left-color: var(--accent-yellow); }
+  .theme-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .theme-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+  }
+  .footer p {
+    color: var(--text-muted);
+    font-size: 12px;
+  }
+  .footer a {
+    color: var(--accent-blue);
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .header-inner { flex-direction: column; text-align: center; }
+    .header-meta { text-align: center; }
+    .news-grid, .themes-grid { grid-template-columns: 1fr; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .highlight { color: var(--accent-yellow); font-weight: 600; }
+  .badge-new {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    background: var(--accent-red);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+</style>
 </head>
 <body>
 
-<div class="topbar">
-  <h1>Semitech · 电子行业动态简报</h1>
-  <div class="sub">2026年8月7日 · 覆盖过去32小时 · Terafab超级芯片工厂动工 · 存储2027产能售罄 · DeepSeek大幅涨价 · AMD收购Taalas</div>
-</div>
-
-<div class="stats">
-  <div class="stat">
-    <div class="sv green">+6.55%</div>
-    <div class="sl">费城半导体指数 SOX (8/4)</div>
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">S</div>
+      <div class="logo-text">
+        <h1>Semitech 电子行业每日简报</h1>
+        <span>半导体 · AI芯片 · 存储器 · 供应链 · 政策与资本</span>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="date">2026年8月11日 星期二</div>
+      <div class="time-range">覆盖时间：2026.08.10 03:55 — 2026.08.11 11:55 (GMT+8)</div>
+    </div>
   </div>
-  <div class="stat">
-    <div class="sv red">+178.8%</div>
-    <div class="sl">韩国7月芯片出口 ($410亿)</div>
-  </div>
-  <div class="stat">
-    <div class="sv amber">$168亿</div>
-    <div class="sl">Terafab 超级芯片工厂首期投资</div>
-  </div>
-  <div class="stat">
-    <div class="sv purple">+2.36%</div>
-    <div class="sl">科创芯片指数 (8/7盘中)</div>
-  </div>
-  <div class="stat">
-    <div class="sv blue">$10亿</div>
-    <div class="sl">台积电堆积A20 Pro芯片(缺DRAM)</div>
-  </div>
-  <div class="stat">
-    <div class="sv cyan">2027售罄</div>
-    <div class="sl">三大原厂DRAM+HBM产能</div>
-  </div>
-</div>
+</header>
 
 <div class="container">
 
-<!-- ========= 美国市场 ========= -->
-<div class="section">
-  <div class="sec-title us">🇺🇸 美国市场</div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🏭</span><span class="ni-title">SpaceX+特斯拉官宣Terafab超级芯片工厂动工，首期投资168亿美元</span></div>
-    <div class="ni-body">8月6日，SpaceX与特斯拉联合宣布，全球最大芯片工厂Terafab正式在得克萨斯州格赖姆斯县破土动工。首期投资<strong>168亿美元</strong>，未来扩建总投资最高可达<strong>1190亿美元</strong>。工厂规划制造面积超1亿平方英尺（930万㎡），集逻辑芯片、存储芯片制造、封装、测试于一体，目标年产<strong>1太瓦算力</strong>。马斯克表示Optimus人形机器人将消耗约25%算力产能，75%用于航天AI。SpaceX还将自建天然气发电厂+大型储能电池阵列保障电力。特斯拉官网已开放"存储器工艺整合工程师"招聘，英特尔参与合作。（来源：SpaceX官网, 财联社, 新浪财经, 金融界）</div>
-    <div class="ni-tags"><span class="tag tag-us">美国</span><span class="tag tag-ai">AI芯片</span><span class="tag tag-mc">存储器</span></div>
-    <a class="ni-source" href="https://new.qq.com/rain/a/20260807A03VWA00" target="_blank">财联社 · Terafab 芯片工厂破土动工</a>
+  <!-- Key Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-value">$6.3B</div>
+      <div class="stat-label">索尼×台积电合资传感器</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value red">$15B</div>
+      <div class="stat-label">英特尔增发融资规模</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value green">+147%</div>
+      <div class="stat-label">摩尔线程 H1 营收增速</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value green">+116.6%</div>
+      <div class="stat-label">7月中国IC出口同比</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">~80%</div>
+      <div class="stat-label">三星HBM4良率</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">5万亿₩</div>
+      <div class="stat-label">韩国半导体专项基金</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value red">−5%</div>
+      <div class="stat-label">英特尔盘后跌幅</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value green">90%</div>
+      <div class="stat-label">国产AI芯片高端份额预估</div>
+    </div>
   </div>
 
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🖥️</span><span class="ni-title">英伟达考虑降低Rubin Ultra HBM配置，HBM供应短缺倒逼设计降级</span></div>
-    <div class="ni-body">据The Information 8月6日报道，英伟达正在测试至少<strong>3个低HBM配置版本</strong>的Rubin Ultra GPU，以应对先进HBM持续短缺。降级路径包括：从HBM4E下调至HBM4、从12Hi降至8Hi。TrendForce确认英伟达尚未敲定最终规格，正并行评估多种方案。BusinessKorea评论称"即使冒着性能下降风险也在考虑降级，证明存储厂商掌握市场主导权"。英伟达股价8/6收跌0.1%，SK海力士跌4.97%。（来源：IT之家, The Information, BusinessKorea, TrendForce）</div>
-    <div class="ni-tags"><span class="tag tag-ai">AI芯片</span><span class="tag tag-mc">存储器</span><span class="tag tag-us">美国</span></div>
-    <a class="ni-source" href="https://www.163.com/dy/article/L3NC63DA0511B8LM.html" target="_blank">IT之家 · 英伟达降低Rubin Ultra HBM配置</a>
+  <!-- Section: US Market -->
+  <div class="section">
+    <div class="section-title">
+      <span class="flag">🇺🇸</span>
+      <span class="dot dot-us"></span>
+      美国市场
+    </div>
+    <div class="news-grid">
+
+      <div class="news-card">
+        <span class="tag tag-chip">AI 芯片</span>
+        <h3>微软 Maia 300 最快下月亮相，锁定台积电 30 万颗产能</h3>
+        <p>微软计划今年秋季（最快9月）发布下一代自研 AI 芯片 Maia 300，已与台积电洽谈 2027 年交付超 30 万颗的产能。运行 OpenAI 及微软自有模型时运营成本较英伟达尖端芯片低 30%–40%，并正争取 Anthropic 等外部云客户采用。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://weibo.com/1774800467/5330689688865005" target="_blank" rel="noopener">新浪财经 →</a>
+          <a class="source-link" href="http://view.inews.qq.com/a/20260811A00PRR00" target="_blank" rel="noopener">IT时代网 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-capital">资本市场</span>
+        <h3>英特尔拟发 150 亿美元普通股，盘后跌超 5%</h3>
+        <p>英特尔 8月10日宣布发行 150 亿美元普通股，募资用于 AI 数据中心、专用硅片、先进封装及晶圆代工等业务扩张。Q2 数据中心与 AI 收入达 62.6 亿美元（+59% YoY），创 2011 年以来最强季度增长。但稀释担忧令股价盘中最深跌超 5%。</p>
+        <div class="meta">
+          <span class="time-badge">8月10日</span>
+          <a class="source-link" href="http://view.inews.qq.com/a/20260810A0CH6V00" target="_blank" rel="noopener">智通财经网 →</a>
+          <a class="source-link" href="https://mp.weixin.qq.com/s?__biz=MzI0NDU5OTAzMA==&mid=2247621601&idx=1&sn=a6b6aaebe4384377ef0e4d1d93335941" target="_blank" rel="noopener">中新经纬 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-chip">AI 芯片</span>
+        <h3>英伟达 Vera CPU 已向 OpenAI/Anthropic 出货，年收入预估 $200 亿</h3>
+        <p>英伟达首款全自研服务器 CPU "Vera" 6 月起向 OpenAI、Anthropic 等客户交付，本财年预估收入约 200 亿美元。Agentic AI 正重新定义 CPU 在数据中心的核心地位，CPU:GPU 配比有望从 1:8 收敛至 1:2 甚至 1:1。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://www.ambleelec.com/en/NewsDetail/1051" target="_blank" rel="noopener">Amble Electronics →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-foundry">晶圆代工</span>
+        <h3>英特尔 18A-P 进入风险量产，14A 锁定 2027 下半年试产</h3>
+        <p>英特尔首款效能强化制程 Intel 18A-P 已进入风险量产阶段，14A 制程预定 2027 下半年内部风险试产、2028 下半年量产。CEO 强调对 14A 不再有"空白支票"，后续投资必须绑定客户承诺与经济效益。</p>
+        <div class="meta">
+          <span class="time-badge">8月3日</span>
+          <a class="source-link" href="https://s8088.com/article/3213398" target="_blank" rel="noopener">经济日报 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-supply">供应链</span>
+        <h3>FCC 26-50 将美国技术管控延伸至芯片、光模块与供应链源头</h3>
+        <p>FCC 新规框架不再仅盯品牌或最终组装地，范围扩展至芯片、模块、软件、固件、设计所有权、产地及供应链控制权，对光模块、网络设备及 ODM 供应商构成新的合规风险。FCC 同时起草限制中国新型号数据中心光模块进口（设2年过渡期），草案仍可能修改或搁置。</p>
+        <div class="meta">
+          <span class="time-badge">8月10日</span>
+          <a class="source-link" href="https://digitimes.com/regions" target="_blank" rel="noopener">DIGITIMES →</a>
+          <a class="source-link" href="https://www.toutiao.com/article/7670364030254481939/" target="_blank" rel="noopener">财经杂志 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-capital">资本市场</span>
+        <h3>英伟达支持的 Lambda 拟融资 9.17 亿美元采购 AI 芯片</h3>
+        <p>AI 云计算服务商 Lambda 正通过杠杆贷款市场融资 9.17 亿美元用于采购 AI 芯片，延续"新云厂商"以 GPU 资产为基础融资扩算力的趋势。AI 基础设施企业正探索创新融资模式支撑算力扩张。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="http://view.inews.qq.com/a/20260811A0016800" target="_blank" rel="noopener">PANews →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-chip">AI 芯片</span>
+        <h3>Discovered Materials 部署 AI 智能体加速芯片散热新材料发现</h3>
+        <p>初创公司 Discovered Materials 部署大量 AI 智能体寻找高效集成电路新材料，完成 900 万美元种子轮融资，每天可完成数千次候选材料猜测并借物理模型仿真验证，聚焦半导体热管理领域。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="http://view.inews.qq.com/a/20260811A001RV00" target="_blank" rel="noopener">至顶科技 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-foundry">晶圆代工</span>
+        <h3>Nokia 收购 NXP 亚利桑那 Chandler 晶圆厂，押注 AI 光互联</h3>
+        <p>Nokia 收购 NXP 位于亚利桑那 Chandler 的晶圆厂园区，标志 AI 基础设施竞赛正从 GPU 和存储扩展至连接数据中心集群的光学组件，上游瓶颈正从算力向互联转移。</p>
+        <div class="meta">
+          <span class="time-badge">8月7日</span>
+          <a class="source-link" href="https://www.digitimes.com/514.asp" target="_blank" rel="noopener">DIGITIMES →</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🤖</span><span class="ni-title">AMD收购AI推理芯片创企Taalas，24人团队6nm芯片刷屏硅谷</span></div>
-    <div class="ni-body">8月7日，AMD宣布达成最终协议收购加拿大AI推理芯片创企<strong>Taalas</strong>。Taalas由前AMD/英伟达架构师柳比萨·巴吉克创立，首款产品HC1采用台积电6nm制程，芯片面积815mm²（与H100相当），可将整个8B Llama 3.1模型集成到单芯片上，总融资超2亿美元。AMD计划将其技术融入Helios机架级解决方案。芯东西实测发现其推理速度极快（0.001秒）但错误率偏高。AMD Q2数据中心营收+107%创新高。（来源：芯东西, 金融界, DoNews）</div>
-    <div class="ni-tags"><span class="tag tag-ai">AI芯片</span><span class="tag tag-us">美国</span></div>
-    <a class="ni-source" href="https://www.163.com/dy/article/L3NOBU8S05318XR6.html" target="_blank">芯东西 · AMD收购Taalas</a>
+  <!-- Section: China Market -->
+  <div class="section">
+    <div class="section-title">
+      <span class="flag">🇨🇳</span>
+      <span class="dot dot-cn"></span>
+      中国市场
+    </div>
+    <div class="news-grid">
+
+      <div class="news-card">
+        <span class="tag tag-capital">资本市场</span>
+        <h3>摩尔线程拟赴港上市，"国产 GPU 第一股"启动 A+H 双平台<span class="badge-new">NEW</span></h3>
+        <p>摩尔线程 8月9日公告拟发行 H 股并在港交所主板上市。2026 H1 营收 17.36 亿元（+147.42%），超 2025 全年；净亏损大幅收窄 95.73% 至仅 0.12 亿元。旗舰 MTT S5000 智算卡持续规模化量产，夸娥智算集群多地部署。A 股最新市值约 2810 亿元。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://www.163.com/dy/article/L3TNLQC60530NLC9.html" target="_blank" rel="noopener">中国基金报 →</a>
+          <a class="source-link" href="https://epaper.cs.com.cn/zgzqb/html/2026-08/10/nw.D110000zgzqb_20260810_1-A14.htm" target="_blank" rel="noopener">中国证券报 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-chip">AI 芯片</span>
+        <h3>寒武纪 H1 营收 +108% 但 Q2 增速放缓，股价两日累跌超 7%</h3>
+        <p>寒武纪 2026 H1 营收 59.96 亿元（+108%），净利润 23.11 亿元（+122.6%）。但 Q2 营收 31.11 亿元环比仅 +7.8%，增速放缓引发市场对高增长可持续性的担忧，8月10日跌 6.33%，11日续跌 1.25% 报 1,109.99 元。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://www.163.com/dy/article/L41S0PP3051987V2.html" target="_blank" rel="noopener">有连云 →</a>
+          <a class="source-link" href="https://dy.163.com/article/L41TQ4A005199NPP.html" target="_blank" rel="noopener">21世纪经济报道 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-foundry">设备/材料</span>
+        <h3>中微公司 H1 净利润预增 282%-311%，三星/SK 海力士评估其设备</h3>
+        <p>据报三星电子和 SK 海力士正评估中微公司芯片制造设备，考虑用于中国工厂以应对美国出口管制收紧。中微设备已被长江存储等国内主要芯片厂采用。中微 H1 归母净利润同比大增 282%–311%，股价 8月10日涨超 6%。国产设备从"国内替代"迈向"全球认可"。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://www.163.com/dy/article/L41S0PP3051987V2.html" target="_blank" rel="noopener">有连云 →</a>
+          <a class="source-link" href="https://new.qq.com/rain/a/20260811A047XP00" target="_blank" rel="noopener">腾讯新闻 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-memory">存储器</span>
+        <h3>长鑫科技纳入 MSCI 中国全股票指数，Q2 营收 +716% 全球第四</h3>
+        <p>长鑫科技 8月10日被纳入 MSCI 中国全股票指数正式生效，当日股价剧烈震荡后拉升，最新市值约 3.4 万亿元。Counterpoint 报告显示其 Q2 DRAM 营收同比暴增 716%，以 7% 市占率稳居全球第四。苹果正测试长鑫 DRAM 用于 iPhone/MacBook。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://view.inews.qq.com/a/20260810A07R4100" target="_blank" rel="noopener">九派财经 →</a>
+          <a class="source-link" href="https://www.163.com/game/article/DK3UFFO400318PFH_mobile.html" target="_blank" rel="noopener">中央社 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-policy">政策监管</span>
+        <h3>上海出台 IC 全产业链突破方案，修订《布图设计保护条例》10月施行</h3>
+        <p>上海市商务委等七部门印发《上海市国家服务贸易创新发展示范区建设方案》，推动集成电路"设计+制造"融合，在临港新片区建设国际联合设计中心。修订后《集成电路布图设计保护条例》将于 2026年10月15日施行，系 2001 年以来首次系统性调整，将集成光子、量子等功能纳入保护范畴并加大侵权赔偿。</p>
+        <div class="meta">
+          <span class="time-badge">8月10日</span>
+          <a class="source-link" href="http://view.inews.qq.com/a/20260810A09J8J00" target="_blank" rel="noopener">证券时报 →</a>
+          <a class="source-link" href="https://mp.weixin.qq.com/s?__biz=MzU2MTUwMjQ2OA==&mid=2247489248&idx=2&sn=c2553ff264a54420839f0aaac3044b53" target="_blank" rel="noopener">信用安阳 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-supply">产业生态</span>
+        <h3>40 余家半导体企业落户海南，初步形成四环节产业链</h3>
+        <p>据海南日报报道，国内半导体企业相继落户海南，已有 40 余家企业落户、多家实现投产，初步形成芯片设计、封装测试、整机制造、保税维修/再制造 4 环节产业链，成为海南高技术制造业新增长动能。</p>
+        <div class="meta">
+          <span class="time-badge">8月10日</span>
+          <a class="source-link" href="http://view.inews.qq.com/a/20260810A07WE000" target="_blank" rel="noopener">观点新媒体 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-capital">资本市场</span>
+        <h3>江波龙定增 37 亿元投向 AI 存储；半导体设备 ETF 连续 3 日净流入 6.77 亿元</h3>
+        <p>江波龙宣布定增 37 亿元投向 AI 存储领域。半导体设备 ETF 易方达（159558）近 3 天连续净流入合计 6.77 亿元，近 1 周规模增长 30.65 亿元。华泰证券看好 AI 链、功率被动元件、自主可控三条主线。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://new.qq.com/rain/a/20260811A047XP00" target="_blank" rel="noopener">腾讯新闻 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-policy">出口数据</span>
+        <h3>7 月中国集成电路出口 +116.6%，AI 产业链成增长引擎</h3>
+        <p>海关数据显示 2026 年 7 月中国出口表现强劲：集成电路出口金额同比 +116.6%，自动数据处理设备 +67.4%，亮眼出口数据反映全球市场对中国科技产品的旺盛需求。光大证券认为 8 月中报密集披露期有望成为盈利驱动拐点。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="http://gu.qq.com/resources/shy/news/detail-v2/index.html#/?id=nesSN2026081111312394d22523&s=b" target="_blank" rel="noopener">每日经济新闻 →</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">📱</span><span class="ni-title">台积电因DRAM短缺堆积10亿美元苹果A20 Pro芯片</span></div>
-    <div class="ni-body">据独立科技记者Tim Culpan 8月5日爆料，台积电2nm A20 Pro处理器<strong>产量与良率表现良好</strong>，但因DRAM芯片严重短缺，约<strong>10亿美元</strong>已完工晶圆堆积仓库无法完成封装。苹果首款折叠屏iPhone Ultra及iPhone 18 Pro量产排期被拖慢，距离9月发布会不足6周。库克在Q3财报中承认"供应链灵活性远低于往常"。苹果紧急追加SK海力士和三星订单，同时评估将<strong>长鑫存储</strong>纳入DRAM供应体系。天风国际郭明錤预测A20芯片备货量将下调10%-20%。（来源：芯智讯, CNMO, 每日经济新闻, 快科技）</div>
-    <div class="ni-tags"><span class="tag tag-us">美国</span><span class="tag tag-mc">存储器</span><span class="tag tag-supply">供应链</span></div>
-    <a class="ni-source" href="https://www.163.com/dy/article/L3LAVA4C0511838M.html" target="_blank">芯智讯 · 10亿美元A20 Pro芯片堆积</a>
+  <!-- Section: Global Supply Chain -->
+  <div class="section">
+    <div class="section-title">
+      <span class="flag">🌐</span>
+      <span class="dot dot-global"></span>
+      全球供应链信号
+    </div>
+    <div class="news-grid">
+
+      <div class="news-card">
+        <span class="tag tag-foundry">晶圆代工</span>
+        <h3>索尼 × 台积电：1 万亿日元熊本合资，2029 年量产下一代图像传感器</h3>
+        <p>索尼与台积电计划共同投资约 1 万亿日元（63 亿美元），在日本熊本县菊阳町设立合资公司（索尼 60% / 台积电 40%），研发并量产下一代图像传感器，目标 2029 年商业化。瞄准苹果 iPhone 高端摄像及自动驾驶、机器人等"实体 AI"应用，为日本半导体产业迄今最大合资项目之一。</p>
+        <div class="meta">
+          <span class="time-badge">8月10日</span>
+          <a class="source-link" href="https://www.163.com/dy/article/L401T8G00511838M.html" target="_blank" rel="noopener">芯智讯 →</a>
+          <a class="source-link" href="https://anysilicon.com/news/sony-and-tsmc-reportedly-plan-6-3-billion-joint-venture-for-next-generation-image-sensors" target="_blank" rel="noopener">AnySilicon →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-foundry">先进封装</span>
+        <h3>台积电拟收购友达两座面板厂，扩充先进封装产能</h3>
+        <p>据台媒报道，台积电将买下友达中科 L7 厂（7.5代）与 L5C 厂（5代）两座厂房，用于扩充先进封装产能，交易金额预计突破 300 亿新台币（约 62.88 亿元人民币）。双方将借鉴"群创模式"，重点布局 FOPLP 与 CoPoS 领域，打造先进制程与先进封装"一条龙"制造基地。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://so.html5.qq.com/page/real/search_news?docid=70000021_2036a7a681143252" target="_blank" rel="noopener">腾讯新闻 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-memory">存储器</span>
+        <h3>三星 HBM4 良率逼近 80%；SK 海力士董事会批准 54.3 万亿韩元扩产</h3>
+        <p>三星电子 HBM4 良率已接近 80%，与 SK 海力士的 HBM 产能竞赛白热化。SK 海力士董事会 8月7日批准 35.2 万亿韩元（龙仁 Y2 晶圆厂）及 19.1 万亿韩元（清州 M17 厂）投资。三巨头合计扩产投资超 1 万亿美元，历史规律显示大规模扩产常预示上升周期接近顶点。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://so.html5.qq.com/page/real/search_news?docid=70000021_2036a7a681143252" target="_blank" rel="noopener">腾讯新闻 →</a>
+          <a class="source-link" href="http://www.koreaittimes.com/news/articleView.html?idxno=155903" target="_blank" rel="noopener">Korea IT Times →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-supply">材料涨价</span>
+        <h3>半导体关键材料全线涨价：硅片、特殊气体、先进封装材料齐涨</h3>
+        <p>受先进工艺与封装需求攀升、中东冲突推高能源成本及中国战略矿产出口管控影响，硅片、六氟化钨（WF6）、溅射靶材、电子级化学品、氦气及先进封装材料价格普遍上涨。ADI 宣布 9 月 13 日起全系产品调价（年内第二轮），TI、NXP 等模拟芯片龙头 2026 年也纷纷提价。</p>
+        <div class="meta">
+          <span class="time-badge">8月10日</span>
+          <a class="source-link" href="https://www.digitimes.com/514.asp" target="_blank" rel="noopener">DIGITIMES →</a>
+          <a class="source-link" href="http://view.inews.qq.com/a/20260810A0DFNW00" target="_blank" rel="noopener">芯榜 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-memory">存储器</span>
+        <h3>DRAM 供需持续紧张：Q3 合约价 +13-18%，OPPO/vivo 拒绝三星涨价</h3>
+        <p>Q3 服务器 DRAM 合约价预计季增 13%–18%。HBM 每投 1 片晶圆消耗 3 片常规 DRAM 产能，两类紧缺相互强化。但 OPPO/vivo 已正式拒绝三星 Q3 约 20% 的涨价——这是 2026 年第三次涨价，累计近 300% 涨幅令下游接近极限。存储芯片在手机 BOM 占比已从 10-15% 飙至 20% 以上。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://www.ambleelec.com/NewsDetail/1050" target="_blank" rel="noopener">Amble Electronics →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-policy">政策/地缘</span>
+        <h3>韩国设立 5 万亿韩元半导体专项基金，总统敦促加速芯片集群建设</h3>
+        <p>韩国 8月10日宣布设立规模 5 万亿韩元（约 35.2 亿美元）的半导体专项基金，重点投资芯片材料、零部件及无晶圆厂企业。总统李在明同日主持会议加速"三大超级项目"（半导体集群、实体 AI、地方 AI 数据中心），中长期投资合计约 6200 万亿韩元，拟年内制定"超级特区特别法"缩短审批。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="https://new.qq.com/rain/a/20260811A047XP00" target="_blank" rel="noopener">腾讯新闻 →</a>
+          <a class="source-link" href="http://view.inews.qq.com/a/20260810A0B8H500" target="_blank" rel="noopener">第一财经 →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-supply">跨界布局</span>
+        <h3>TOTO 投资 170 亿日元加码半导体陶瓷；华新科 B/B Ratio 冲上 1.8</h3>
+        <p>日本卫浴巨头 TOTO 宣布投资 170 亿日元建设陶瓷研发大楼，布局静电卡盘与 AD 气溶胶沉积陶瓷部件，适配 AI GPU/HBM 先进芯片制造。被动元件方面，华新科董事长焦佑衡表示市况明显转佳、部分供不应求，订单能见度"比 2026 年底还长"，B/B Ratio 冲上 1.8。</p>
+        <div class="meta">
+          <span class="time-badge">8月11日</span>
+          <a class="source-link" href="http://view.inews.qq.com/a/20260810A0DFO600" target="_blank" rel="noopener">芯榜 →</a>
+          <a class="source-link" href="https://www.digitimes.com.tw/semi_seed/index.asp" target="_blank" rel="noopener">DIGITIMES →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <span class="tag tag-supply">SK 海力士</span>
+        <h3>SK 海力士考虑出售重庆封装厂股权（估值约 30 亿美元）</h3>
+        <p>SK 海力士正考虑为重庆半导体封装测试工厂引入外部投资者或出售股权，该工厂估值约 30 亿美元。此举发生在其加码韩国本土投资的背景下（龙仁+清州扩产计划），映射存储巨头全球产能布局的结构性再平衡。</p>
+        <div class="meta">
+          <span class="time-badge">8月10日</span>
+          <a class="source-link" href="https://digitimes.com/regions" target="_blank" rel="noopener">DIGITIMES →</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🧠</span><span class="ni-title">Anthropic官宣自研AI芯片，或由三星2nm代工</span></div>
-    <div class="ni-body">8月6-7日，Anthropic正式确认组建芯片设计团队，为Claude模型开发定制AI芯片。招聘年薪<strong>$32-48.5万美元</strong>，采用"协同设计"方式同时开发硬件和模型。此前传闻正与三星讨论2nm制程+先进封装合作，三星为Anthropic 650亿美元H轮战略投资方之一。Anthropic强调坚持"多芯片策略"——AWS Trainium、谷歌TPU、英伟达GPU、AMD并行。继OpenAI发布Jalapeño后，头部AI公司全部下场造芯。（来源：DoNews, Business Insider, 路透社, TechCrunch）</div>
-    <div class="ni-tags"><span class="tag tag-ai">AI芯片</span><span class="tag tag-us">美国</span></div>
-    <a class="ni-source" href="https://www.163.com/dy/article/L3NOAM6B0511D2LM.html" target="_blank">DoNews · Anthropic官宣自研AI芯片</a>
+  <!-- Key Data Comparison Table -->
+  <div class="section">
+    <div class="section-title">
+      <span class="flag">📊</span>
+      关键数据对比
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>指标</th>
+            <th>当前数值</th>
+            <th>变化趋势</th>
+            <th>来源/备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>费城半导体指数 (SOX)</td>
+            <td>12,226.26</td>
+            <td class="td-down">−1% (8/10)</td>
+            <td>英特尔增发拖累</td>
+          </tr>
+          <tr>
+            <td>寒武纪 (688256)</td>
+            <td>1,109.99 元</td>
+            <td class="td-down">−1.25% (8/11 盘中)</td>
+            <td>Q2 增速放缓</td>
+          </tr>
+          <tr>
+            <td>摩尔线程 (688795)</td>
+            <td>575.69 元</td>
+            <td class="td-up">+0.30% (8/11 盘中)</td>
+            <td>H股上市公告后</td>
+          </tr>
+          <tr>
+            <td>长鑫科技 (688825)</td>
+            <td>50.79 元</td>
+            <td class="td-down">−0.99% (8/11 盘中)</td>
+            <td>MSCI 纳入生效日</td>
+          </tr>
+          <tr>
+            <td>DRAM DDR5 16Gb 现货</td>
+            <td>$51.93 (均价)</td>
+            <td class="td-up">+0.32%</td>
+            <td>DRAMeXchange 8/11</td>
+          </tr>
+          <tr>
+            <td>HBM4 现货涨幅 (Q3-Q4)</td>
+            <td>+40%–50% QoQ</td>
+            <td class="td-up">↑↑↑</td>
+            <td>现货议价权极强</td>
+          </tr>
+          <tr>
+            <td>Q3 服务器 DRAM 合约价</td>
+            <td>+13%–18% QoQ</td>
+            <td class="td-up">↑↑</td>
+            <td>TrendForce 预估</td>
+          </tr>
+          <tr>
+            <td>三星 HBM4 良率</td>
+            <td>~80%</td>
+            <td class="td-up">↑ 持续提升</td>
+            <td>接近量产门槛</td>
+          </tr>
+          <tr>
+            <td>中国 IC 出口 (7月)</td>
+            <td>+116.6% YoY</td>
+            <td class="td-up">↑↑↑</td>
+            <td>海关总署</td>
+          </tr>
+          <tr>
+            <td>英特尔增发规模</td>
+            <td>$150 亿</td>
+            <td class="td-neutral">——</td>
+            <td>普通股公开发行</td>
+          </tr>
+          <tr>
+            <td>索尼×台积电合资规模</td>
+            <td>¥1 万亿 (~$63亿)</td>
+            <td class="td-neutral">——</td>
+            <td>日经报道</td>
+          </tr>
+          <tr>
+            <td>摩尔线程 H1 营收</td>
+            <td>¥17.36 亿 (+147%)</td>
+            <td class="td-up">↑↑↑</td>
+            <td>2026 半年报</td>
+          </tr>
+          <tr>
+            <td>存储三巨头扩产合计</td>
+            <td>>$1 万亿</td>
+            <td class="td-neutral">——</td>
+            <td>Samsung+SK+Micron</td>
+          </tr>
+          <tr>
+            <td>手机 BOM 存储占比</td>
+            <td>20%+ (低端 30-60%)</td>
+            <td class="td-up">从 10-15% 飙升</td>
+            <td>Omdia</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🎵</span><span class="ni-title">OpenAI首款AI智能音箱定价$300-400，iPhone设计之父操刀</span></div>
-    <div class="ni-body">OpenAI据称首款AI智能音箱定价<strong>300-400美元</strong>，由iPhone设计之父Jony Ive的LoveFrom公司操刀设计。与此同时，OpenAI此前已携手博通发布首款自研推理芯片Jalapeño（台积电3nm），从概念到流片仅9个月。AI巨头的硬件野心从云端芯片延伸至消费终端。（来源：每日经济新闻, 澎湃新闻）</div>
-    <div class="ni-tags"><span class="tag tag-ai">AI芯片</span><span class="tag tag-us">美国</span></div>
-    <a class="ni-source" href="https://new.qq.com/rain/a/20260807A03Z0V00" target="_blank">每日经济新闻 · 科技早参</a>
+  <!-- Core Themes -->
+  <div class="section">
+    <div class="section-title">
+      <span class="flag">🔍</span>
+      核心主线总结
+    </div>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <h3>主线一：自研 AI 芯片全面提速，英伟达统治力遭遇结构性侵蚀</h3>
+        <p>微软 Maia 300 下月发布（成本低 30-40%），英特尔 150 亿美元增发押注 AI 代工，英伟达 Vera CPU 出货自建生态——三大信号指向同一趋势：云厂商和芯片巨头正全力构建替代英伟达 GPU 垄断的第二选择。与此同时，英伟达四大客户（微软/谷歌/亚马逊/Meta）近三年贡献其数据中心约五成营收，却在同步加码自研。这是一场"用你的利润来打败你"的博弈。</p>
+      </div>
+      <div class="theme-card">
+        <h3>主线二：存储超级周期进入"下游承受极限"博弈阶段</h3>
+        <p>HBM 每投 1 片晶圆消耗 3 片常规 DRAM 产能，存储紧缺的自我强化机制仍在运转。但 OPPO/vivo 拒绝三星 Q3 涨价具有信号意义：300% 累计涨幅令下游承受力接近极限，手机整机 ASP 创历史新高。存储"涨价→抑制需求→出货量下滑→涨价动力衰减"的拐点隐现。彭博预警 2028 产能过剩，产业方坚称短缺至 2030——分歧本身就是信号。</p>
+      </div>
+      <div class="theme-card">
+        <h3>主线三：中国半导体从"替代"走向"输出"——设备出海 + GPU 赴港</h3>
+        <p>中微公司设备获三星/SK 海力士评估，标志国产设备从"内循环替代"走向"外循环输出"，定价底气显现。摩尔线程启动 A+H 双平台、H1 营收超去年全年，寒武纪估值从"对标英伟达"的叙事转向"业绩验证"。TrendForce 预测国产 AI 芯片将占中国高端市场 90% 份额——外部封堵正在加速内部闭环。</p>
+      </div>
+      <div class="theme-card">
+        <h3>主线四：地缘技术博弈从芯片延伸到光模块与供应链源头</h3>
+        <p>FCC 26-50 将管控范围从品牌/组装延伸至芯片、光模块、软件固件、设计所有权和供应链控制权；日本第三轮出口管制聚焦高端先进封装设备；中国氦气/铟磷化物出口管控反制——技术脱钩正从"卡高端芯片"升级为"全供应链管控"。光模块禁令看似精准打击，实则伤敌一千自损八百（中国占全球高端光模块 70-80% 份额）。</p>
+      </div>
+      <div class="theme-card">
+        <h3>主线五：物理 AI 成为半导体需求新锚点，台积电索尼万亿豪赌</h3>
+        <p>台积电×索尼 1 万亿日元图像传感器合资、英特尔押注"物理 AI + 专用硅片"、SpaceX 星载 AI 算力——芯片需求正从"云端训练"扩展至"物理世界感知与交互"。传统半导体周期由 PC/手机驱动，本轮新增 AI 训练+推理，下一阶段将加入自动驾驶、机器人、太空算力等物理 AI 需求。需求结构正在发生不可逆的扩张。</p>
+      </div>
+    </div>
   </div>
 
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🛡️</span><span class="ni-title">FCC起草新规限制中国光模块入美，中国商务部启动五项对等反制</span></div>
-    <div class="ni-body">8月4日，美国FCC起草新规限制1.6T及以上新一代高速光收发器由中国大陆直供美国（800G不受影响），引发光模块板块震荡。8月5日中国商务部落地<strong>五项反制组合拳</strong>：收紧无人机出口审批、将6家美方检测机构纳入反制清单、暂停美方CCC工厂核查、将美合规测试公司列入黑名单、启动进口打印复印设备国家安全专项调查（首例）。同时，中国正考虑修订技术出口管制目录，收紧AI和半导体技术出口，堵海外收购漏洞。（来源：同花顺, 网易, 金融时报, AASTOCKS）</div>
-    <div class="ni-tags"><span class="tag tag-policy">政策监管</span><span class="tag tag-us">美国</span><span class="tag tag-cn">中国</span></div>
-    <a class="ni-source" href="https://www.163.com/dy/article/L3L1N5EN0517V5D9.html" target="_blank">网易 · 中国5项反制措施</a>
-  </div>
 </div>
 
-<!-- ========= 中国市场 ========= -->
-<div class="section">
-  <div class="sec-title cn">🇨🇳 中国市场</div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">📈</span><span class="ni-title">A股半导体继续走强，科创芯片指数涨超2.3%，锴威特涨停20%</span></div>
-    <div class="ni-body">8月7日早盘，A股半导体板块延续涨势：科创芯片指数涨<strong>2.36%</strong>，光芯片板块涨<strong>3.81%</strong>，国证半导体芯片指数涨<strong>2.92%</strong>。锴威特涨停20%（93.38元）、有研新材涨停10%、光迅科技涨停10%。兆易创新涨6.7%、中芯国际涨1.5%、寒武纪微跌0.88%。半导体板块主力净流入42.2亿元，光芯片板块主力净流入53.0亿元。科创芯片ETF博时涨超2.5%冲击4连涨。此前费半+6.55%提供海外映射。（来源：Wind数据, 每日经济新闻）</div>
-    <div class="ni-tags"><span class="tag tag-cn">中国</span><span class="tag tag-ai">AI芯片</span></div>
-    <a class="ni-source" href="https://new.qq.com/rain/a/20260807A065IP00" target="_blank">腾讯新闻 · 科创芯片ETF涨超2%</a>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>Semitech 电子行业每日简报 · 自动生成于 2026年8月11日 11:55 (GMT+8)</p>
+    <p style="margin-top:8px;">数据来源：DIGITIMES · 腾讯新闻 · 新浪财经 · 财联社 · 中国证券报 · 21世纪经济报道 · Amble Electronics · Korea IT Times · 日经新闻 · DRAMeXchange · Counterpoint · TrendForce · 等</p>
+    <p style="margin-top:4px;"><a href="https://semitech.pages.dev" target="_blank" rel="noopener">semitech.pages.dev</a></p>
   </div>
+</footer>
 
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">💎</span><span class="ni-title">长鑫存储拒绝苹果压价：坚持报价不低于三星/SK海力士</span></div>
-    <div class="ni-body">据韩媒Digital Daily 8月5日报道，苹果为缓解DRAM成本压力与长鑫存储就移动DRAM（含LPDDR5X）供应谈判，要求降价的提议遭拒绝。长鑫坚持报价<strong>高于或至少持平三星/SK海力士</strong>。底气来自：华为、小米等国内客户已通过长期合约锁定大部分产能；Counterpoint数据显示长鑫Q2全球份额同比暴增<strong>+716%</strong>，全球第四大DRAM供应商（7%份额）；填补三大原厂转HBM留下的结构性供给缺口。潮新闻评论："不靠低价讨好，巨头长鑫硬气了。"（来源：TechSugar, 海报新闻, 潮新闻, Counterpoint）</div>
-    <div class="ni-tags"><span class="tag tag-cn">中国</span><span class="tag tag-mc">存储器</span></div>
-    <a class="ni-source" href="https://dy.163.com/article/L3NCRR8M05312NX9.html" target="_blank">TechSugar · 长鑫拒绝苹果压价</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">⚡</span><span class="ni-title">DeepSeek宣布API大幅涨价，告别"价格屠夫"策略</span></div>
-    <div class="ni-body">8月6日，DeepSeek发布公告称计划近期<strong>整体上调API服务定价，预计涨幅较大</strong>。当前V4-Flash每百万Token输入1元/输出2元，V4-Pro输入3元/输出6元。此前V4-Flash正式版7月31日上线后调用量暴增：OpenRouter周榜显示<strong>7.22万亿Token居首</strong>，8月1日单日达<strong>8万亿Token</strong>。高盛研报指出价格上调"并非需求走弱，而是算力资源趋紧，行业从价格战回归理性定价"。智谱、月之暗面、MiniMax年内均已多轮涨价。（来源：证券时报, 红星资本局, 澎湃新闻）</div>
-    <div class="ni-tags"><span class="tag tag-cn">中国</span><span class="tag tag-ai">AI芯片</span></div>
-    <a class="ni-source" href="https://www.stcn.com/article/detail/4062768.html" target="_blank">证券时报 · DeepSeek宣布涨价</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">📡</span><span class="ni-title">诺基亚收购恩智浦晶圆厂，专攻磷化铟光学半导体</span></div>
-    <div class="ni-body">8月6日，诺基亚宣布收购恩智浦位于美国亚利桑那州的钱德勒半导体制造园区，作为长期光器件制造计划的一部分。诺基亚将持续拓展磷化铟（InP）光学半导体制造能力，切入AI算力数据中心光互联市场。高盛同日大幅上调AI服务器PCB和CCL预测：2028年市场规模将达<strong>840亿和480亿美元</strong>。（来源：TechSugar, 腾讯新闻）</div>
-    <div class="ni-tags"><span class="tag tag-supply">供应链</span><span class="tag tag-gl">全球</span></div>
-    <a class="ni-source" href="https://dy.163.com/article/L3NCRR8M05312NX9.html" target="_blank">TechSugar · 诺基亚收购晶圆厂</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🔬</span><span class="ni-title">中国考虑收紧AI和半导体技术出口管制，堵海外收购漏洞</span></div>
-    <div class="ni-body">据英国《金融时报》8月7日报道，中国商务部正咨询阿里、字节跳动、智谱等AI公司，讨论限制模型训练关键数据向海外转移、限制模型权重下载等方案。新措施可能纳入<strong>《禁止或限制出口技术目录》</strong>修订，同时可能阻止高通、台积电等基于华为/阿里/字节设计生产先进半导体。此举是对Meta 20亿美元收购Manus后被中国当局下令解除的应急反应，反映北京对AI领域已建立全球领先地位的信心。（来源：金融时报, AASTOCKS）</div>
-    <div class="ni-tags"><span class="tag tag-policy">政策监管</span><span class="tag tag-cn">中国</span></div>
-    <a class="ni-source" href="https://www.aastocks.com/tc/usq/news/comment.aspx?id=now.1534227&source=aafn" target="_blank">AASTOCKS · 中国研收紧AI技术出口管制</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🧮</span><span class="ni-title">消息称英伟达急寻中国AI基站供应商，加速本土化部署</span></div>
-    <div class="ni-body">据TechSugar 8月7日报道，消息称英伟达正在积极寻找中国AI基站供应商，以推进其在华AI基础设施部署。与此同时，Huakun（华鲲振宇）正深化与华为的服务器合作，客户已覆盖东盟、中亚和南亚，目标通过本地化AI应用拓展海外增长。（来源：TechSugar, DIGITIMES）</div>
-    <div class="ni-tags"><span class="tag tag-cn">中国</span><span class="tag tag-ai">AI芯片</span></div>
-    <a class="ni-source" href="https://dy.163.com/article/L3NCRR8M05312NX9.html" target="_blank">TechSugar · 英伟达急寻中国AI基站供应商</a>
-  </div>
-</div>
-
-<!-- ========= 全球供应链信号 ========= -->
-<div class="section">
-  <div class="sec-title gl">🌐 全球供应链信号</div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🔥</span><span class="ni-title">存储三巨头2027年DRAM+HBM产能全部售罄，AI公司"跪求"芯片</span></div>
-    <div class="ni-body">8月7日财联社重磅：三星、SK海力士、美光已完成<strong>2027全年产能分配</strong>，DRAM和HBM产能全部售罄。多数客户仅获初始请求的60%-70%配额。消息人士称部分AI企业正苦苦<strong>"跪求"零部件</strong>，愿付溢价抢购。SK集团会长崔泰源警告2027年AI半导体需求同比+60%-100%，"将面临史上最严重短缺"。DRAM Q3合约价预计+13%~18%。NAND因供给厂家较多，买方仍可争取2027年产能分配空间。微软上调Xbox价格$150，任天堂计划下月提高Switch 2售价，iPhone 18 Pro预计超过$1399。（来源：财联社, 东方财富, TrendForce）</div>
-    <div class="ni-tags"><span class="tag tag-mc">存储器</span><span class="tag tag-supply">供应链</span><span class="tag tag-gl">全球</span></div>
-    <a class="ni-source" href="https://t.cj.sina.com.cn/articles/view/2868676035/aafc85c302001uby8" target="_blank">财联社 · 存储三巨头2027产能售罄</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">📊</span><span class="ni-title">马斯克：内存需求+200%，产能仅+20%，供需裂口持续扩大</span></div>
-    <div class="ni-body">马斯克在近期财报电话会中直言："内存产量每年增长20%，但需求爆发超过200%。"这一表述被BusinessKorea引用为当前AI半导体供需失衡最直观刻画。三星在Q2电话会亦诊断"2027年供需缺口将比2026年更大"。SK海力士Q2创纪录盈利，确认开始放缓HBM4扩产步伐、将更多产能转向<strong>通用DRAM</strong>（营业利润率比HBM高出至少15个百分点）。中信证券指出存储行业周期属性重构，预计2026-2028年连续三年高景气。（来源：BusinessKorea, 腾讯新闻, 中信证券）</div>
-    <div class="ni-tags"><span class="tag tag-mc">存储器</span><span class="tag tag-supply">供应链</span><span class="tag tag-gl">全球</span></div>
-    <a class="ni-source" href="https://www.businesskorea.co.kr/news/articleView.html?idxno=274306" target="_blank">BusinessKorea · 内存供需失衡</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🇰🇷</span><span class="ni-title">韩国7月半导体出口暴增178.8%至$410亿，连续两月破$400亿</span></div>
-    <div class="ni-body">韩国产业通商资源部公布7月贸易数据：半导体出口同比激增<strong>178.8%</strong>至<strong>410亿美元</strong>，连续两个月突破400亿美元关口，为拉动出口增长核心品类。三星和SK海力士现金储备飙升，股东施压要求更高分红。韩国芯片出口越来越多流向中国台湾进行TSMC先进封装，东亚半导体产业链形成"韩国产+台湾封"协作格局。（来源：腾讯新闻, 韩联社, TechSugar）</div>
-    <div class="ni-tags"><span class="tag tag-supply">供应链</span><span class="tag tag-gl">全球</span></div>
-    <a class="ni-source" href="https://new.qq.com/rain/a/20260805A06LXS00" target="_blank">腾讯新闻 · 韩国半导体出口激增</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🏗️</span><span class="ni-title">SEMI：2026全球半导体设备销售$1659亿创新高，连续五年增长</span></div>
-    <div class="ni-body">SEMI预测2026年全球半导体制造设备销售额将达<strong>1659亿美元</strong>（同比+23.2%），2028年有望升至2295亿美元，实现连续五年增长。WSTS预计2026年全球半导体收入增长近90%至约$1.5万亿，2027年再+27%至约$1.9万亿。中信建投指出海外设备已出现"量价齐升"与交期延长，产业链定价权向设备与零部件环节上移。台积电3nm制程产能提前2-3个月扩张，Q4初月投片量升至18万片。（来源：SEMI, 中信建投, DIGITIMES, 每日经济新闻）</div>
-    <div class="ni-tags"><span class="tag tag-supply">供应链</span><span class="tag tag-gl">全球</span></div>
-    <a class="ni-source" href="https://www.nbd.com.cn/articles/2026-08-07/4534745.html" target="_blank">每日经济新闻 · 台积电加速扩充产能</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🌍</span><span class="ni-title">McClean报告：2026半导体市场增长动力来自"涨价"而非"出货量"</span></div>
-    <div class="ni-body">McClean报告指出，2026年半导体市场规模攀升的核心动力是<strong>芯片涨价而非出货量增长</strong>。三大存储原厂调配晶圆资源倾斜HBM生产，挤压通用DRAM供给，推高从服务器到消费电子全场景内存成本。TrendForce研究显示通用DRAM 2026年供需缺口约-1%至-2%，2027年因需求增速快于供给成长将进一步扩大。DRAM价格涨势预计延续至2027年下半年，多数新产能投片放量需等到2028年。（来源：腾讯新闻, TrendForce）</div>
-    <div class="ni-tags"><span class="tag tag-mc">存储器</span><span class="tag tag-gl">全球</span></div>
-    <a class="ni-source" href="https://new.qq.com/rain/a/20260807A041GZ00" target="_blank">腾讯新闻 · McClean报告</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">📱</span><span class="ni-title">苹果iPhone 18折叠屏备货千万部，标准版或延期至2027年</span></div>
-    <div class="ni-body">供应链爆料：苹果要求合作伙伴为<strong>约1000万部</strong>折叠屏iPhone准备产能（高于此前700-800万部预期）。2026下半年新品iPhone总产能预留最高达8500万部。但DRAM短缺导致A20 Pro芯片堆积，标准版iPhone 18及新一代iPhone Air可能推迟至2027年初发布。折叠屏起步价预计<strong>超$2000（约¥13,500）</strong>，iPhone 18全系预计涨价$100-$200。9月9日最可能发布。苹果规划全生命周期总产量2亿台，折叠屏占比不足一成。（来源：界面新闻, 快科技, 彭博社）</div>
-    <div class="ni-tags"><span class="tag tag-supply">供应链</span><span class="tag tag-gl">全球</span></div>
-    <a class="ni-source" href="https://new.qq.com/rain/a/20260806A08GGD00" target="_blank">腾讯新闻 · 苹果紧急扫货内存</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">🧪</span><span class="ni-title">SpaceX首批限售股解禁9.1亿股，股价逆势涨超6%</span></div>
-    <div class="ni-body">8月6日，SpaceX迎来上市后首批<strong>9.115亿股</strong>限售股解禁（潜在市值约$1000亿），股价不跌反涨<strong>6.14%</strong>，成交量2.51亿股创新高。此前一天因首份财报披露AI资本支出超$180亿远超预期，股价暴跌近14%。SpaceX采用九阶段分批解禁机制，规模最大的解禁预计在2027年6月（马斯克约64亿股A类普通股）。市场认为抛压已被提前消化。（来源：每日经济新闻, 环球市场播报）</div>
-    <div class="ni-tags"><span class="tag tag-us">美国</span><span class="tag tag-ai">AI芯片</span></div>
-    <a class="ni-source" href="https://new.qq.com/rain/a/20260807A03Z0V00" target="_blank">每日经济新闻 · SpaceX解禁股价涨超6%</a>
-  </div>
-
-  <div class="news-item">
-    <div class="ni-top"><span class="ni-emoji">💡</span><span class="ni-title">格罗方德Q2净利润$1.67亿环比+61%；联发科第二款AI ASIC 2028年量产</span></div>
-    <div class="ni-body">格罗方德2026财年Q2归母净利润1.67亿美元，<strong>环比增长61%</strong>。联发科首款AI ASIC预计2026 Q2量产，第二款有望2028年量产，已批准50亿美元自由裁量资金，将英特尔EMIB-T与台积电CoWoS并列关键封装技术。DIGITIMES报道中国28nm DUV光刻机已进入晶圆厂验证阶段（传由国务院级专家指导）。（来源：TechSugar, DIGITIMES）</div>
-    <div class="ni-tags"><span class="tag tag-ai">AI芯片</span><span class="tag tag-supply">供应链</span><span class="tag tag-gl">全球</span></div>
-    <a class="ni-source" href="https://dy.163.com/article/L3NCRR8M05312NX9.html" target="_blank">TechSugar · 格罗方德Q2 + 联发科AI ASIC</a>
-  </div>
-</div>
-
-<!-- ========= 关键数据对比 ========= -->
-<div class="section">
-  <div class="sec-title data">📊 关键数据对比</div>
-  <div style="overflow-x:auto;">
-    <table class="data-table">
-      <thead>
-        <tr><th>指标</th><th>美国/全球</th><th>中国</th><th>趋势</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>半导体指数</strong></td><td>SOX <span class="up">+6.55%</span> (8/4)</td><td>科创芯片 <span class="up">+2.36%</span> (8/7)</td><td>全球共振反弹</td></tr>
-        <tr><td><strong>芯片出口增速</strong></td><td>韩国 <span class="up">+178.8%</span> (7月,$410亿)</td><td>中国 <span class="up">+96.1%</span> (H1,$1773亿)</td><td>亚太芯片出口持续高增</td></tr>
-        <tr><td><strong>DRAM 2027产能</strong></td><td colspan="2">三大原厂<span class="up">全部售罄</span> (客户仅获60-70%)</td><td>存储超级周期延续</td></tr>
-        <tr><td><strong>DRAM合约价Q3</strong></td><td colspan="2"><span class="up">+13%~18%</span> (TrendForce)</td><td>涨价斜率趋缓但续涨</td></tr>
-        <tr><td><strong>内存供需失衡</strong></td><td colspan="2">需求<span class="up">+200%</span> vs 产能<span class="up">+20%</span> (马斯克)</td><td>裂口持续扩大</td></tr>
-        <tr><td><strong>Terafab投资</strong></td><td>首期<span class="up">$168亿</span> (总计可达$1190亿)</td><td>—</td><td>最大单体芯片工厂</td></tr>
-        <tr><td><strong>台积电A20 Pro</strong></td><td>积压<span class="up">$10亿</span> (缺DRAM)</td><td>—</td><td>DRAM卡死2nm芯片</td></tr>
-        <tr><td><strong>长鑫存储</strong></td><td>全球份额<span class="up">+716%</span> (Q2)</td><td>第4大DRAM供应商(7%)</td><td>定价权跃升</td></tr>
-        <tr><td><strong>先进封装</strong></td><td>台积电InFO/CoWoS紧缺</td><td>国产设备加速替代</td><td>3nm月投片18万片(Q4)</td></tr>
-        <tr><td><strong>DeepSeek API</strong></td><td>OpenAI降80%应对</td><td>DeepSeek<span class="up">大幅涨价</span></td><td>行业从"拼低价"转理性</td></tr>
-        <tr><td><strong>AI芯片自研</strong></td><td>Anthropic+OpenAI+谷歌+Meta</td><td>阿里+百度+月之暗面</td><td>头部全下场造芯</td></tr>
-        <tr><td><strong>消费电子涨价</strong></td><td>iPhone 18 <span class="up">+$100~200</span></td><td>Xbox <span class="up">+$150</span></td><td>内存成本全线传导</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!-- ========= 核心主线总结 ========= -->
-<div class="section">
-  <div class="sec-title main">🧭 核心主线总结</div>
-
-  <div class="main-item">
-    <span class="mi-num">1</span><span class="mi-title">HBM供应短缺已开始物理约束AI芯片设计——"Memory Wall"从理论变现实</span>
-    <div class="mi-desc">英伟达被迫为Rubin Ultra准备三种低HBM方案、苹果$10亿A20 Pro芯片因缺DRAM堆积仓库、马斯克直言"需求+200%产能仅+20%"，三件事叠加标志着存储瓶颈已不再是"涨价故事"而是"物理极限"。这不是产能爬坡期的暂时紧张，而是结构性制约——即便英伟达、苹果这种全球最强议价能力的买家，也不得不在产品设计层面为DRAM短缺做妥协。消费电子（iPhone/Xbox/Switch）全线涨价只是冰山露出水面的一角。</div>
-  </div>
-
-  <div class="main-item">
-    <span class="mi-num">2</span><span class="mi-title">"新入场者"重塑芯片供给版图——Terafab + 长鑫 + AI巨头自研</span>
-    <div class="mi-desc">三条线并行加速：(1) 马斯克Terafab超级工厂动工，168亿美元首期切入逻辑+存储双赛道，虽然3-5年才能贡献产能，但"买家变卖家"的趋势已成；(2) 长鑫存储+716%增速后拒绝苹果压价，定价权从"看三巨头脸色"转向"平等叫价"，标志着中国存储从配角到独立一极；(3) Anthropic正式加入自研芯片阵营，OpenAI+谷歌+Meta+亚马逊+阿里+百度全部下场，"用了GPU→买了GPU→造了自己的ASIC"这条路径正在被所有人重走。</div>
-  </div>
-
-  <div class="main-item">
-    <span class="mi-num">3</span><span class="mi-title">中美技术管制进入"双向对等反制"新阶段</span>
-    <div class="mi-desc">美国FCC限制中国光模块入美+UFLPA清单拉黑43家中企，中国商务部24小时内打出五项反制组合拳（检测机构黑名单+无人机出口管控+打印设备安全调查），速度快、精准度高。更关键的是中国正考虑修订技术出口管制目录、防止AI模型权重外流——从"被制裁对象"到"主动设限"的角色转换。这不是过去"你打一拳我喊一声"的模式，而是双方都有了实质性反制工具和意愿。全球半导体供应链正被不可逆地重塑为两个平行体系。</div>
-  </div>
-
-  <div class="main-item">
-    <span class="mi-num">4</span><span class="mi-title">大模型定价拐点——从"价格战"切换至"成本传导"</span>
-    <div class="mi-desc">DeepSeek宣布大幅涨价标志着AI行业定价逻辑的系统性切换。2024-2025年"极致低价抢市场"是建立在算力充裕的前提下的；当V4-Flash单日8万亿Token调用量叠加HBM/DRAM/电力成本全面上行，"低定价高用量"的商业模式开始失血。智谱+83%、月之暗面+3-4倍、MiniMax等已先行涨价，DeepSeek作为"价格锚"提价将把整个行业价格地板系统性上移。这不再是"一家公司调价"，而是整个AI推理价值链的重新定价。</div>
-  </div>
-
-  <div class="main-item">
-    <span class="mi-num">5</span><span class="mi-title">A股半导体：中报业绩+政策催化+海外映射三重共振</span>
-    <div class="mi-desc">8月7日A股半导体延续强势：科创芯片+2.36%、光芯片+3.81%、半导体板块主力净流入42.2亿。催化剂三重共振：(1) 中报业绩大爆发（中微公司+282~311%、江波龙+62000%+等）；(2) 政策密集落地（集成电路布图设计条例修订10月15日施行、中国拟收紧AI技术出口管制、商务部五项反制）；(3) 海外映射（费半+6.55%、AMD数据中心+107%、存储短缺催化）。万联证券指出Q2电子行业基金重仓及超配比例创近年新高，机构配置持续向AI算力与半导体自主可控集中。</div>
-  </div>
-</div>
-
-<div class="footer">
-  Semitech 电子行业动态简报 · 2026年8月7日 · 数据来源：DIGITIMES, BusinessKorea, The Information, 财联社, IT之家, 证券时报, 芯东西, TechSugar, 每日经济新闻, 澎湃新闻, TrendForce, SEMI, Counterpoint, 金融时报 等 · 仅供信息参考，不构成投资建议
-</div>
-
-</div>
 </body>
 </html>
